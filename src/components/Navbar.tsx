@@ -7,6 +7,7 @@ import { Menu, X, ChevronDown, Phone, Mail, UserRound } from "lucide-react";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   // Add shadow on scroll for a premium feel
   useEffect(() => {
@@ -127,10 +128,12 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Mobile menu button */}
             <div className="lg:hidden flex items-center">
               <button
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  if (isOpen) setOpenDropdown(null);
+                }}
                 className="text-slate-600 hover:text-slate-900 focus:outline-none p-2 bg-slate-50 rounded-lg border border-slate-100"
               >
                 {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -146,20 +149,30 @@ export default function Navbar() {
               <div key={link.name}>
                 <Link
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    if (link.hasDropdown) {
+                      e.preventDefault();
+                      setOpenDropdown(openDropdown === link.name ? null : link.name);
+                    } else {
+                      setIsOpen(false);
+                      setOpenDropdown(null);
+                    }
+                  }}
                   className="block px-4 py-3 rounded-lg text-base font-semibold text-slate-700 hover:text-red-600 hover:bg-red-50 transition-colors flex justify-between items-center"
                 >
                   {link.name}
-                  {link.hasDropdown && <ChevronDown className="w-4 h-4 text-slate-400" />}
+                  {link.hasDropdown && (
+                    <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-300 ${openDropdown === link.name ? 'rotate-180' : ''}`} />
+                  )}
                 </Link>
                 
                 {/* Mobile Submenu for About Us */}
-                {link.name === "About Us" && (
+                {link.name === "About Us" && openDropdown === "About Us" && (
                   <div className="pl-6 space-y-1 mt-1 border-l-2 border-red-100 ml-4 overflow-hidden">
-                    <Link href="/experts" onClick={() => setIsOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-600 hover:text-[#024a9d] hover:bg-blue-50 transition-colors">Our Experts</Link>
-                    <Link href="/partner" onClick={() => setIsOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-600 hover:text-[#024a9d] hover:bg-blue-50 transition-colors">Join as Partner</Link>
-                    <Link href="/about" onClick={() => setIsOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-[#024a9d] hover:bg-blue-50 transition-colors">About Company</Link>
-                    <Link href="/agent" onClick={() => setIsOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-600 hover:text-[#024a9d] hover:bg-blue-50 transition-colors">Join As Agent</Link>
+                    <Link href="/experts" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-600 hover:text-[#024a9d] hover:bg-blue-50 transition-colors">Our Experts</Link>
+                    <Link href="/partner" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-600 hover:text-[#024a9d] hover:bg-blue-50 transition-colors">Join as Partner</Link>
+                    <Link href="/about" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-[#024a9d] hover:bg-blue-50 transition-colors">About Company</Link>
+                    <Link href="/agent" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-600 hover:text-[#024a9d] hover:bg-blue-50 transition-colors">Join As Agent</Link>
                   </div>
                 )}
               </div>

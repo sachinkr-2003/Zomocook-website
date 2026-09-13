@@ -2,25 +2,25 @@ import React from 'react';
 
 export default function PartnerForm() {
   return (
-    <section className="py-12 lg:py-20 bg-slate-50 relative z-10 w-full overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 xl:grid-cols-2 gap-16 lg:gap-24 items-center">
+    <section className="py-12 sm:py-16 lg:py-20 bg-slate-50 relative z-10 w-full overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
         {/* LEFT SIDE: Cinematic Collage */}
-        <div className="w-full relative">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-800 font-bold text-[10px] uppercase tracking-widest mb-2">Investment Opportunity</div>
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-[#024a9d] mb-2 tracking-tight leading-[1.15]">
-            HoReCa- India's Most <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#d62423]">Leading Industry</span>
+        <div className="w-full relative px-2 sm:px-0 lg:px-0">
+          <div className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-blue-100 text-blue-800 font-bold text-[8px] sm:text-[10px] uppercase tracking-widest mb-3">Investment Opportunity</div>
+          <h2 className="text-[28px] sm:text-3xl lg:text-4xl font-extrabold text-[#024a9d] mb-4 sm:mb-2 tracking-tight leading-[1.2] sm:leading-[1.15]">
+            HoReCa- India's Most <br className="hidden sm:block" />
+            <span className="text-[28px] sm:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#d62423]">Leading Industry</span>
           </h2>
-          <p className="text-slate-500 font-medium text-sm lg:text-base mb-4 max-w-sm">
+          <p className="text-slate-500 font-medium text-sm lg:text-base mb-8 sm:mb-4 max-w-sm">
             Tap into a rapidly growing market full of scalable opportunities and immense potential for recurring ROI.
           </p>
 
-          <div className="relative w-full max-w-[360px] h-[280px] mx-auto xl:mx-0 mt-4">
+          <div className="relative w-full max-w-[320px] sm:max-w-[360px] h-[240px] sm:h-[280px] mx-auto xl:mx-0 mt-4">
             {/* Dynamic Glow Behind */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] bg-gradient-to-tr from-blue-300 to-red-200 rounded-full blur-[60px] opacity-40 z-0"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] bg-gradient-to-tr from-blue-300 to-red-200 rounded-full blur-[60px] opacity-40 z-0"></div>
 
             {/* Top Polaroid (Slanted) */}
-            <div className="absolute top-0 left-0 w-[220px] h-[160px] bg-white p-2 pb-6 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-md transform -rotate-6 z-10 border border-slate-100 transition-all duration-500 hover:-rotate-3 hover:scale-105">
+            <div className="absolute top-0 left-0 w-[180px] h-[130px] sm:w-[220px] sm:h-[160px] bg-white p-1.5 sm:p-2 pb-5 sm:pb-6 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-md transform -rotate-6 z-10 border border-slate-100 transition-all duration-500 hover:-rotate-3 hover:scale-105">
               <div className="w-full h-full bg-slate-100 rounded overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=600&auto=format&fit=crop"
@@ -31,7 +31,7 @@ export default function PartnerForm() {
             </div>
 
             {/* Bottom Polaroid (Straight) */}
-            <div className="absolute bottom-4 right-0 w-[240px] h-[180px] bg-white p-2 shadow-[0_40px_80px_-15px_rgba(2,74,157,0.2)] rounded-md z-20 border border-slate-100 transition-all duration-500 hover:-rotate-2 hover:scale-105">
+            <div className="absolute bottom-4 right-0 w-[200px] h-[150px] sm:w-[240px] sm:h-[180px] bg-white p-1.5 sm:p-2 shadow-[0_40px_80px_-15px_rgba(2,74,157,0.2)] rounded-md z-20 border border-slate-100 transition-all duration-500 hover:-rotate-2 hover:scale-105">
               <div className="w-full h-full bg-slate-100 rounded overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=600&auto=format&fit=crop"
@@ -44,11 +44,11 @@ export default function PartnerForm() {
         </div>
 
         {/* RIGHT SIDE: High-End Application Form */}
-        <div className="w-full bg-white p-6 lg:p-8 rounded-[32px] shadow-[0_20px_80px_-15px_rgba(0,0,0,0.08)] border border-slate-100 relative">
+        <div className="w-full bg-white p-5 sm:p-6 lg:p-8 rounded-[24px] sm:rounded-[32px] shadow-[0_20px_80px_-15px_rgba(0,0,0,0.08)] border border-slate-100 relative">
           {/* Form Top Accent */}
-          <div className="absolute top-0 left-8 w-20 h-1bg-gradient-to-r from-[#024a9d] to-[#d62423] rounded-b-full"></div>
+          <div className="absolute top-0 left-6 sm:left-8 w-16 sm:w-20 h-1 bg-gradient-to-r from-[#024a9d] to-[#d62423] rounded-b-full"></div>
 
-          <h2 className="text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight mb-1">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight mb-1">
             Investor Consultation
           </h2>
           <p className="font-bold text-slate-500 text-sm mb-8">
@@ -132,8 +132,8 @@ export default function PartnerForm() {
 
             {/* Next Button */}
             <div className="mt-8 flex justify-end">
-              <button className="bg-gradient-to-r from-[#024a9d] to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold text-sm px-10 py-3 rounded-xl shadow-[0_5px_15px_-5px_rgba(2,74,157,0.6)] transform transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_20px_-5px_rgba(2,74,157,0.7)]">
-                Continue Form &rarr;
+              <button className="w-full sm:w-auto bg-gradient-to-r from-[#024a9d] to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold text-sm px-10 py-3 rounded-xl shadow-[0_5px_15px_-5px_rgba(2,74,157,0.6)] transform transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_20px_-5px_rgba(2,74,157,0.7)] flex justify-center items-center gap-2">
+                Continue Form <span>&rarr;</span>
               </button>
             </div>
           </div>
