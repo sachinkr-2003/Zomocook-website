@@ -52,21 +52,11 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             
-            {/* Logo area - Inspired by the reference image */}
-            <div className="flex-shrink-0 flex items-center gap-3">
-              <div className="relative flex justify-center items-center bg-red-600 rounded-2xl w-12 h-12 shadow-lg shadow-red-200">
-                <span className="text-white font-black text-2xl">Z</span>
-                {/* Decorative classic chef hat shape illusion */}
-                <div className="absolute -top-1 w-6 h-2 bg-red-600 rounded-t-full border-t border-red-400"></div>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-extrabold text-2xl tracking-tight text-slate-900 leading-none">
-                  Zomocoock
-                </span>
-                <span className="text-[0.65rem] font-bold text-gray-500 tracking-widest uppercase mt-1">
-                  Premium Services
-                </span>
-              </div>
+            {/* Logo area - Referencing uploaded image */}
+            <div className="flex-shrink-0 flex items-center">
+              <Link href="/">
+                <img src="/logo.jpeg" alt="Zomocook Logo" className="h-12 md:h-14 w-auto object-contain" />
+              </Link>
             </div>
 
             {/* Desktop Menu - Classic Typography & Hover Effects */}
@@ -150,17 +140,29 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Dropdown */}
-        <div className={`lg:hidden transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div className={`lg:hidden transition-all duration-500 overflow-y-auto ${isOpen ? 'max-h-[85vh] opacity-100' : 'max-h-0 opacity-0'}`}>
           <div className="px-4 py-4 bg-white border-t border-slate-100 shadow-xl space-y-1">
             {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="block px-4 py-3 rounded-lg text-base font-semibold text-slate-700 hover:text-red-600 hover:bg-red-50 transition-colors" // classic styling
-              >
-                {link.name}
-              </Link>
+              <div key={link.name}>
+                <Link
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block px-4 py-3 rounded-lg text-base font-semibold text-slate-700 hover:text-red-600 hover:bg-red-50 transition-colors flex justify-between items-center"
+                >
+                  {link.name}
+                  {link.hasDropdown && <ChevronDown className="w-4 h-4 text-slate-400" />}
+                </Link>
+                
+                {/* Mobile Submenu for About Us */}
+                {link.name === "About Us" && (
+                  <div className="pl-6 space-y-1 mt-1 border-l-2 border-red-100 ml-4 overflow-hidden">
+                    <Link href="/experts" onClick={() => setIsOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-600 hover:text-[#024a9d] hover:bg-blue-50 transition-colors">Our Experts</Link>
+                    <Link href="/partner" onClick={() => setIsOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-600 hover:text-[#024a9d] hover:bg-blue-50 transition-colors">Join as Partner</Link>
+                    <Link href="/about" onClick={() => setIsOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-[#024a9d] hover:bg-blue-50 transition-colors">About Company</Link>
+                    <Link href="/agent" onClick={() => setIsOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-600 hover:text-[#024a9d] hover:bg-blue-50 transition-colors">Join As Agent</Link>
+                  </div>
+                )}
+              </div>
             ))}
             <div className="mt-4 px-4 pt-4 border-t border-slate-100">
               <button className="w-full bg-black text-white px-5 py-3 rounded-lg flex items-center justify-center gap-3 shadow-md">

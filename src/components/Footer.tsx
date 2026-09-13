@@ -72,12 +72,14 @@ export default function Footer() {
           
           {/* Column 1: About Us */}
           <div>
-            {/* Mock Logo matching the red square */}
-            <div className="w-16 h-16 bg-white rounded-2xl p-1 shadow-md mb-6 flex items-center justify-center">
-              <div className="w-full h-full bg-[#d62423] rounded-xl flex items-center justify-center text-white font-black text-2xl">
-                Z
-              </div>
-            </div>
+            {/* Official Logo */}
+            <Link href="/" className="inline-block mb-6">
+              <img 
+                src="/logo.jpeg" 
+                alt="Zomocook Logo" 
+                className="h-16 lg:h-20 w-auto object-contain rounded-md shadow-md"
+              />
+            </Link>
             
             <h3 className="text-lg font-bold mb-4 inline-block border-b-2 border-white pb-1">About Us</h3>
             <ul className="space-y-2.5 text-sm font-medium text-blue-50">

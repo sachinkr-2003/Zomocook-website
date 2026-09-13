@@ -64,7 +64,7 @@ export default function ExpertsPage() {
                 <img 
                   src="https://images.unsplash.com/photo-1577219492769-b63a779fac28?q=80&w=800&auto=format&fit=crop" 
                   alt="Shalini Lall"
-                  className="w-full h-full object-cover object-center transform transition-transform duration-1000 group-hover:scale-110 opacity-90"
+                  className="w-full h-full object-cover object-center transform transition-transform duration-1000 group-hover:scale-110"
                 />
               </div>
             </div>
@@ -82,7 +82,7 @@ export default function ExpertsPage() {
           
           {/* Text Content Side */}
           <div className="w-full lg:w-[55%] relative z-10">
-            <Quote className="absolute -top-8 -left-8 w-24 h-24 text-blue-100 opacity-50 z-0 -rotate-12 transition-transform duration-500 group-hover:rotate-0 group-hover:text-blue-200" />
+            <Quote className="absolute -top-4 right-4 lg:-top-8 lg:-left-8 w-16 h-16 lg:w-24 lg:h-24 text-blue-100 opacity-20 lg:opacity-50 z-0 -rotate-12 transition-transform duration-500 group-hover:rotate-0 group-hover:text-blue-200" />
             
             <div className="relative z-10 pl-0 lg:pl-8">
               <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-2 tracking-tight">Shalini Lall</h2>
@@ -106,7 +106,7 @@ export default function ExpertsPage() {
           
           {/* Text Content Side */}
           <div className="w-full lg:w-[55%] relative z-10 lg:text-right">
-            <Quote className="absolute -bottom-12 -right-8 w-32 h-32 text-blue-100 opacity-40 z-0 rotate-[190deg] transition-transform duration-500 group-hover:-rotate-180 group-hover:text-blue-200" />
+            <Quote className="absolute -top-4 left-4 lg:-bottom-12 lg:-right-8 w-16 h-16 lg:w-32 lg:h-32 text-blue-100 opacity-20 lg:opacity-40 z-0 rotate-[190deg] transition-transform duration-500 group-hover:-rotate-180 group-hover:text-blue-200" />
             
             <div className="relative z-10 flex flex-col lg:items-end pr-0 lg:pr-8">
               <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-2 tracking-tight">Vikram</h2>
@@ -129,14 +129,14 @@ export default function ExpertsPage() {
             <div className="w-full max-w-[320px] lg:max-w-[380px] relative rounded-3xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(2,74,157,0.3)] border-[8px] border-[#024a9d] bg-[#024a9d] transform transition-transform duration-700 ease-out group-hover:scale-[1.02] group-hover:-rotate-1">
               <div className="w-full h-full bg-slate-100 relative overflow-hidden aspect-square lg:aspect-[4/4.5]">
                 <img 
-                  src="https://images.unsplash.com/photo-1583394838336-aced97836ea3?q=80&w=800&auto=format&fit=crop" 
+                  src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?q=80&w=800&auto=format&fit=crop" 
                   alt="Vikram - Executive Chef"
-                  className="w-full h-full object-cover object-top transform transition-transform duration-1000 group-hover:scale-110 opacity-90 mix-blend-multiply"
+                  className="w-full h-full object-cover object-top transform transition-transform duration-1000 group-hover:scale-110"
                 />
               </div>
             </div>
             {/* Badge floating */}
-            <div className="absolute -top-8 left-0 lg:-left-8 bg-white p-4 lg:p-5 rounded-2xl shadow-xl border border-slate-50 flex flex-row-reverse items-center gap-4 animate-bounce-slow" style={{ animationDelay: '1s' }}>
+            <div className="absolute -bottom-8 left-0 lg:-left-8 bg-white p-4 lg:p-5 rounded-2xl shadow-xl border border-slate-50 flex flex-row-reverse items-center gap-4 animate-bounce-slow" style={{ animationDelay: '1s' }}>
               <div className="w-10 h-10 lg:w-12 lg:h-12 bg-blue-50 text-[#024a9d] rounded-full flex items-center justify-center flex-shrink-0">
                 <History className="w-5 h-5 lg:w-6 lg:h-6" />
               </div>
@@ -173,7 +173,7 @@ export default function ExpertsPage() {
           
           {/* Text Content Side */}
           <div className="w-full lg:w-[55%] relative z-10">
-            <Quote className="absolute -top-8 -left-8 w-24 h-24 text-blue-100 opacity-50 z-0 -rotate-12 transition-transform duration-500 group-hover:rotate-[15deg] group-hover:text-blue-200" />
+            <Quote className="absolute -top-4 right-4 lg:-top-8 lg:-left-8 w-16 h-16 lg:w-24 lg:h-24 text-blue-100 opacity-20 lg:opacity-50 z-0 -rotate-12 transition-transform duration-500 group-hover:rotate-[15deg] group-hover:text-blue-200" />
             
             <div className="relative z-10 pl-0 lg:pl-8">
               <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-2 tracking-tight">Satyam Pandey</h2>

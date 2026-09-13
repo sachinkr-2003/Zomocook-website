@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Zomocoock - Professional Chef Services",
   description: "Hire Professional Cooks & Chefs For Domestic & Commercial",
+  icons: {
+    icon: "/logo.jpeg",
+  },
 };
 
 export default function RootLayout({

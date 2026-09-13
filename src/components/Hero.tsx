@@ -89,27 +89,27 @@ export default function Hero() {
             </div>
 
             {/* Stat Card 1 - Top Left */}
-            <div className="absolute top-[0%] left-[-10%] sm:top-[5%] sm:left-[-5%] bg-white px-5 py-4 sm:px-6 sm:py-5 rounded-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-slate-50 z-20 flex flex-col items-center gap-1 transition-transform hover:scale-105 w-[200px] sm:w-[220px]">
-              <div className="text-[#e11d48] font-black text-3xl sm:text-4xl">15,000+</div>
-              <div className="text-[10px] sm:text-[11px] font-bold text-slate-500 text-center uppercase tracking-wide leading-tight">Chefs Successfully <br/> Placed</div>
+            <div className="absolute top-[-5%] left-[5%] sm:top-[5%] sm:left-[-5%] bg-white px-4 py-3 sm:px-6 sm:py-5 rounded-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-slate-50 z-20 flex flex-col items-center gap-1 transition-transform hover:scale-105 w-[160px] sm:w-[220px]">
+              <div className="text-[#e11d48] font-black text-2xl sm:text-4xl">15,000+</div>
+              <div className="text-[9px] sm:text-[11px] font-bold text-slate-500 text-center uppercase tracking-wide leading-tight">Chefs Successfully <br/> Placed</div>
             </div>
 
             {/* Stat Card 2 - Bottom Left */}
-            <div className="absolute bottom-[20%] left-[-15%] sm:bottom-[22%] sm:left-[-12%] bg-white px-5 py-4 sm:px-6 sm:py-5 rounded-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-slate-50 z-20 flex flex-col items-center gap-1 transition-transform hover:scale-105 w-[220px] sm:w-[240px]">
-              <div className="text-[#059669] font-black text-3xl sm:text-4xl">50,000+</div>
-              <div className="text-[10px] sm:text-[11px] font-bold text-slate-500 text-center uppercase tracking-wide leading-tight">Verified Hospitality <br/> Professionals</div>
+            <div className="absolute bottom-[10%] left-[5%] sm:bottom-[22%] sm:left-[-12%] bg-white px-4 py-3 sm:px-6 sm:py-5 rounded-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-slate-50 z-20 flex flex-col items-center gap-1 transition-transform hover:scale-105 w-[180px] sm:w-[240px]">
+              <div className="text-[#059669] font-black text-2xl sm:text-4xl">50,000+</div>
+              <div className="text-[9px] sm:text-[11px] font-bold text-slate-500 text-center uppercase tracking-wide leading-tight">Verified Hospitality <br/> Professionals</div>
             </div>
             
             {/* Stat Card 3 - Middle Right */}
-            <div className="absolute top-[40%] right-[-15%] sm:right-[-12%] lg:right-[-20%] bg-white px-5 py-4 sm:px-6 sm:py-5 rounded-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-slate-50 z-20 flex flex-col items-center gap-1 transition-transform hover:scale-105 w-[190px] sm:w-[210px]">
-              <div className="text-[#1d4ed8] font-black text-3xl sm:text-[34px]">15,500+</div>
-              <div className="text-[10px] sm:text-[11px] font-bold text-slate-500 text-center uppercase tracking-wide leading-tight">Hotel Partners <br/> Across India</div>
+            <div className="absolute top-[45%] right-[5%] sm:right-[-12%] lg:right-[-20%] bg-white px-4 py-3 sm:px-6 sm:py-5 rounded-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-slate-50 z-20 flex flex-col items-center gap-1 transition-transform hover:scale-105 w-[160px] sm:w-[210px]">
+              <div className="text-[#1d4ed8] font-black text-2xl sm:text-[34px]">15,500+</div>
+              <div className="text-[9px] sm:text-[11px] font-bold text-slate-500 text-center uppercase tracking-wide leading-tight">Hotel Partners <br/> Across India</div>
             </div>
 
             {/* Bottom Trusted Pill */}
-            <div className="absolute -bottom-[2%] left-1/2 -translate-x-1/2 bg-white px-8 py-4 sm:px-10 sm:py-5 rounded-full shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-slate-50 z-30 text-center whitespace-nowrap transition-transform hover:scale-105">
-              <p className="text-[15px] sm:text-base font-bold text-slate-800">Trusted Chef & Hospitality</p>
-              <p className="text-[13px] sm:text-sm font-medium text-slate-500">Staffing Platform</p>
+            <div className="absolute -bottom-[5%] sm:-bottom-[2%] left-1/2 -translate-x-1/2 bg-white px-6 py-3 sm:px-10 sm:py-5 rounded-full shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-slate-50 z-30 text-center whitespace-nowrap transition-transform hover:scale-105 w-[90%] sm:w-auto">
+              <p className="text-[13px] sm:text-base font-bold text-slate-800">Trusted Chef & Hospitality</p>
+              <p className="text-[11px] sm:text-sm font-medium text-slate-500">Staffing Platform</p>
             </div>
             
           </div>
