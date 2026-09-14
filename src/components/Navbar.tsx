@@ -2,7 +2,104 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown, Phone, Mail, UserRound } from "lucide-react";
+import { Menu, X, ChevronDown, Phone, Mail, UserRound, ChefHat, Utensils, Home, PartyPopper, ConciergeBell, Briefcase, Handshake, Verified, ChevronRight } from "lucide-react";
+
+// Massive Services Data Array for Megamenu
+const servicesData = [
+  {
+    title: "Hire Chef For Restaurant",
+    icon: <ChefHat className="w-4 h-4" />,
+    items: [
+      { name: "Hire Chef For New Opening", badge: "Trusted" },
+      { name: "Hire Chef For Running Outlet" },
+      { name: "Hire Executive Chef" },
+      { name: "Hire CDP/DCDP" },
+      { name: "Hire Commi's Staff for Hotel/Restaurant" },
+      { name: "Hire Waiter For Hotel/Restaurant" },
+      { name: "Hire Restaurant Manager" },
+      { name: "Hire Housekeeping For Hotel" },
+      { name: "Hire Female Captain For Hotel" },
+      { name: "Hire Female Waiter For Hotel" },
+      { name: "Hire Female Restaurant Manager" }
+    ]
+  },
+  {
+    title: "Hire Cook For Canteen/Mess",
+    icon: <Utensils className="w-4 h-4" />,
+    items: [
+      { name: "Hire All Rounder cook for canteen" },
+      { name: "Hire Female Cook For Hostel/PG" },
+      { name: "Hire Professional Chef For Canteen" },
+      { name: "Hire Team For Corporate Canteen" }
+    ]
+  },
+  {
+    title: "Domestic House Help Service",
+    icon: <Home className="w-4 h-4" />,
+    items: [
+      { name: "Hire Male Cook For 12/24 Hours", badge: "Verified" },
+      { name: "Hire Female Cook For 12/24 Hours" },
+      { name: "Hire Professional Chef For Home" },
+      { name: "Hire Cook for Daily Basis" }
+    ]
+  },
+  {
+    title: "Private Chef Service",
+    icon: <PartyPopper className="w-4 h-4" />,
+    items: [
+      { name: "Book Chef On Birthday Party", badge: "Trending" },
+      { name: "Book Chef On Cultural Events" },
+      { name: "Book Chef On Kitty Party" },
+      { name: "Book Waiter On Occasion" },
+      { name: "Book Chef on Family Get Together" },
+      { name: "Book Chef on Marriage Anniversary" }
+    ]
+  },
+  {
+    title: "Category Wise Cook",
+    icon: <ConciergeBell className="w-4 h-4" />,
+    items: [
+      { name: "Hire North Indian Chef" },
+      { name: "Hire Chinese chef" },
+      { name: "Hire Tandoor Chef" },
+      { name: "Hire Continental Chef" },
+      { name: "Hire South Indian Chef" }
+    ]
+  },
+  {
+    title: "Manpower Services",
+    icon: <Briefcase className="w-4 h-4" />,
+    items: [
+      { name: "Hire Kitchen Team For Hotel" },
+      { name: "Hire Cook on Agreement Basis" },
+      { name: "Hotel Chefs/Waiter Provider" },
+      { name: "Cook for 1 Years Contract" },
+      { name: "Top Cook on Rent in India" },
+      { name: "Hire Cook for Catering/Events Service" }
+    ]
+  },
+  {
+    title: "Placement Consultancy Services",
+    icon: <Handshake className="w-4 h-4" />,
+    items: [
+      { name: "Restaurant Cook Service" },
+      { name: "Chinese Cook Service" },
+      { name: "Nepali Chinese Chef" },
+      { name: "Fast Food Cook service" }
+    ]
+  },
+  {
+    title: "Other Services",
+    icon: <Verified className="w-4 h-4" />,
+    items: [
+      { name: "Apply for FSSAI", badge: "Premium" },
+      { name: "Swiggy/Zomato Registration" },
+      { name: "Menu designing" },
+      { name: "Kitchen Setup" },
+      { name: "Digital Support" }
+    ]
+  }
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +116,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", href: "/", hasDropdown: false },
     { name: "About Us", href: "/about", hasDropdown: true },
-    { name: "Services", href: "/services", hasDropdown: true },
+    { name: "Services", href: "#", hasDropdown: true },
     { name: "Packages", href: "/packages", hasDropdown: true },
     { name: "Training", href: "/training", hasDropdown: false },
   ];
@@ -109,6 +206,51 @@ export default function Navbar() {
 
                     </div>
                   )}
+
+                  {/* Mega Menu Specifically for Services */}
+                  {link.name === "Services" && (
+                    <div className="absolute top-[80px] left-1/2 -translate-x-1/2 mt-0 w-[960px] bg-white shadow-[0_15px_40px_rgba(0,0,0,0.1)] rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden border border-slate-200 z-50 cursor-default">
+                      <div className="p-6">
+                        <div className="columns-1 md:columns-3 lg:columns-4 gap-6 space-y-6">
+                          {servicesData.map((category, idx) => (
+                             <div key={idx} className="break-inside-avoid">
+                               <div className="flex items-center gap-2 mb-3">
+                                 <div className="w-1.5 h-3.5 bg-[#024a9d]"></div>
+                                 <h4 className="font-extrabold text-[11px] uppercase text-slate-900 tracking-wide">
+                                   {category.title}
+                                 </h4>
+                               </div>
+                               <ul className="space-y-1.5">
+                                 {category.items.map((item, itemIdx) => (
+                                   <li key={itemIdx} className="flex flex-wrap items-center gap-1.5 hidden:max-w-full">
+                                     <Link 
+                                       href={`/services/${item.name.toLowerCase().replace(/[\s/]+/g, '-')}`} 
+                                       className="text-[12px] font-medium text-slate-700 hover:text-[#024a9d] transition-colors leading-snug break-words max-w-full"
+                                     >
+                                       {item.name}
+                                     </Link>
+                                     {item.badge && (
+                                       <span className="bg-[#db2777] text-white px-1 py-0.5 rounded text-[8px] font-bold uppercase tracking-wider shadow-sm mt-0.5 shrink-0">
+                                         {item.badge}
+                                       </span>
+                                     )}
+                                   </li>
+                                 ))}
+                               </ul>
+                             </div>
+                          ))}
+                        </div>
+                        
+                        {/* Global CTA in Dropdown */}
+                        <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between">
+                           <div className="text-[#024a9d] font-bold text-sm tracking-wide">Trained ! Trusted ! Verified</div>
+                           <Link href="/contact" className="bg-[#1a73e8] hover:bg-blue-600 font-sans text-white text-[15px] font-medium py-2 px-6 rounded transition-colors shadow-sm">
+                             Hire Now
+                           </Link>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -173,6 +315,48 @@ export default function Navbar() {
                     <Link href="/partner" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-600 hover:text-[#024a9d] hover:bg-blue-50 transition-colors">Join as Partner</Link>
                     <Link href="/about" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-[#024a9d] hover:bg-blue-50 transition-colors">About Company</Link>
                     <Link href="/agent" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-600 hover:text-[#024a9d] hover:bg-blue-50 transition-colors">Join As Agent</Link>
+                  </div>
+                )}
+                
+                {/* Mobile Submenu for Services (Massive Tree) */}
+                {link.name === "Services" && openDropdown === "Services" && (
+                  <div className="pl-6 space-y-5 mt-3 border-l-2 border-blue-100 ml-4 mb-4 overflow-hidden">
+                    {servicesData.map((category, idx) => (
+                      <div key={idx}>
+                         <div className="flex items-center gap-2 mb-2.5">
+                           <div className="w-1 h-3.5 bg-[#024a9d] rounded-full shrink-0"></div>
+                           <h4 className="font-extrabold text-[12px] uppercase text-slate-800 tracking-wider">
+                             {category.title}
+                           </h4>
+                         </div>
+                         <ul className="space-y-3 pl-3">
+                           {category.items.map((item, itemIdx) => (
+                             <li key={itemIdx} className="flex flex-col">
+                               <Link 
+                                 href={`/services/${item.name.toLowerCase().replace(/[\s/]+/g, '-')}`} 
+                                 onClick={() => { setIsOpen(false); setOpenDropdown(null); }}
+                                 className="text-[13px] font-medium text-slate-600 hover:text-[#024a9d] transition-colors leading-tight block"
+                               >
+                                 {item.name}
+                               </Link>
+                               {item.badge && (
+                                 <span className="inline-flex items-center px-1.5 py-0.5 mt-1 rounded bg-[#db2777] text-white text-[8px] font-extrabold uppercase tracking-widest w-max ring-1 ring-inset ring-pink-500/20 shadow-sm">
+                                   {item.badge}
+                                 </span>
+                               )}
+                             </li>
+                           ))}
+                         </ul>
+                      </div>
+                    ))}
+                    
+                    {/* Mobile Global CTA */}
+                    <div className="mt-5 pt-4 border-t border-blue-100 pr-4">
+                       <div className="text-center font-bold text-[#024a9d] text-xs mb-3 tracking-wide">Trained ! Trusted ! Verified</div>
+                       <Link href="/contact" onClick={() => setIsOpen(false)} className="block w-full text-center bg-[#1a73e8] hover:bg-blue-600 text-white font-sans text-sm font-medium py-2.5 rounded shadow-sm transition-colors">
+                         Hire Now
+                       </Link>
+                    </div>
                   </div>
                 )}
               </div>
