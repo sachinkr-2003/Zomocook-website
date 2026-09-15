@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { UserCheck, Zap, RefreshCw, Map, FileEdit, Users, Handshake, Rocket } from 'lucide-react';
+import ServiceLeadForm from '@/components/forms/ServiceLeadForm';
 
 export default function ServicePage() {
   return (
@@ -189,37 +190,7 @@ export default function ServicePage() {
                </h3>
              </div>
              
-             <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2.5">
-                    <label className="text-[14px] font-bold text-[#334155]">Name <span className="text-[#e11d48]">*</span></label>
-                    <input type="text" placeholder="E.g. Owner/Manager name" className="w-full bg-[#f8fafc] border border-slate-200 hover:border-slate-300 rounded-[14px] px-4 py-3.5 text-[15px] focus:outline-none focus:ring-4 focus:ring-blue-50 focus:border-[#024a9d] focus:bg-white transition-all text-[#0f172a]" />
-                  </div>
-                  
-                  <div className="space-y-2.5">
-                    <label className="text-[14px] font-bold text-[#334155]">Phone Number <span className="text-[#e11d48]">*</span></label>
-                    <div className="flex bg-[#f8fafc] border border-slate-200 hover:border-slate-300 rounded-[14px] overflow-hidden focus-within:ring-4 focus-within:ring-blue-50 focus-within:border-[#024a9d] focus-within:bg-white transition-all">
-                       <div className="flex items-center justify-center bg-white px-4 border-r border-slate-200 shrink-0 gap-2">
-                         <span className="text-xl mt-0.5">🇮🇳</span>
-                         <span className="text-[15px] font-bold text-[#0f172a] pt-0.5">+91</span>
-                       </div>
-                       <input type="tel" placeholder="Enter 10 Digit Mobile No." className="w-full bg-transparent px-4 py-3.5 text-[15px] focus:outline-none text-[#0f172a]" />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-2.5">
-                  <label className="text-[14px] font-bold text-[#334155]">Email Address <span className="text-[#e11d48]">*</span></label>
-                  <input type="email" placeholder="E.g. Cafe@gmail.com" className="w-full bg-[#f8fafc] border border-slate-200 hover:border-slate-300 rounded-[14px] px-4 py-3.5 text-[15px] focus:outline-none focus:ring-4 focus:ring-blue-50 focus:border-[#024a9d] focus:bg-white transition-all text-[#0f172a]" />
-                </div>
-                
-                <div className="pt-6">
-                   <button type="button" className="w-full bg-[#024a9d] hover:bg-[#023a7d] text-white font-bold py-4 rounded-[14px] hover:-translate-y-0.5 transition-all duration-300 text-[17px] shadow-[0_8px_20px_rgba(2,74,157,0.25)] flex justify-center items-center gap-2">
-                     Continue Registration
-                     <span className="text-xl leading-none ml-1">→</span>
-                   </button>
-                </div>
-             </form>
+                          <ServiceLeadForm />
           </div>
         </div>
       </section>

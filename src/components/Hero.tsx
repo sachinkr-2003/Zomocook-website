@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ShieldCheck, Briefcase, ChevronRight, Star, CheckCircle2 } from 'lucide-react';
 
 export default function Hero() {
@@ -34,24 +35,24 @@ export default function Hero() {
             
             <div className="flex flex-col sm:flex-row gap-4 mb-7">
               {/* Hire Now Button - Square with Liquid Fill Animation */}
-              <button className="relative overflow-hidden group flex items-center justify-center gap-2 bg-[#d62423] text-white px-8 py-3.5 rounded-sm font-bold text-base shadow-[0_6px_16px_-4px_rgba(214,36,35,0.5)] transition-transform hover:-translate-y-0.5">
+              <Link href="/contact" className="relative overflow-hidden group flex items-center justify-center gap-2 bg-[#d62423] text-white px-8 py-3.5 rounded-sm font-bold text-base shadow-[0_6px_16px_-4px_rgba(214,36,35,0.5)] transition-transform hover:-translate-y-0.5">
                 <span className="relative z-10 flex items-center gap-2">
                   Hire Now
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
                 {/* Liquid Fill Element - High Contrast Dark Red */}
                 <div className="absolute left-0 bottom-0 w-full h-full bg-[#7a0f12] translate-y-full rounded-t-[100%] transition-transform duration-500 ease-out group-hover:translate-y-0 group-hover:rounded-none z-0"></div>
-              </button>
+              </Link>
               
               {/* Find a Job Button - Square with Liquid Fill Animation */}
-              <button className="relative overflow-hidden group flex items-center justify-center gap-2 bg-[#024a9d] text-white px-8 py-3.5 rounded-sm font-bold text-base shadow-[0_6px_16px_-4px_rgba(2,74,157,0.5)] transition-transform hover:-translate-y-0.5">
+              <Link href="/contact" className="relative overflow-hidden group flex items-center justify-center gap-2 bg-[#024a9d] text-white px-8 py-3.5 rounded-sm font-bold text-base shadow-[0_6px_16px_-4px_rgba(2,74,157,0.5)] transition-transform hover:-translate-y-0.5">
                 <span className="relative z-10 flex items-center gap-2">
                   <Briefcase className="w-4 h-4" />
                   Find a Job
                 </span>
                 {/* Liquid Fill Element - High Contrast Dark Blue */}
                 <div className="absolute left-0 bottom-0 w-full h-full bg-[#013575] translate-y-full rounded-t-[100%] transition-transform duration-500 ease-out group-hover:translate-y-0 group-hover:rounded-none z-0"></div>
-              </button>
+              </Link>
             </div>
             
             <div className="flex items-center gap-8 sm:gap-10">

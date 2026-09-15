@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Check, X, ArrowRight, UserCheck, Zap, Star, ShieldCheck, MapPin, HeartHandshake } from 'lucide-react';
+import ServiceLeadForm from '@/components/forms/ServiceLeadForm';
 
 export default function DomesticCookPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -361,40 +362,7 @@ export default function DomesticCookPage() {
                Personal Details
              </h3>
              
-             <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-[14px] font-bold text-[#475569]">Name <span className="text-red-500">*</span></label>
-                    <input type="text" placeholder="E.g. Owner name" className="w-full bg-[#f8fafc] border border-slate-200 rounded-lg px-4 py-3 text-[15px] focus:outline-none focus:border-[#f97316] transition-colors" />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <label className="text-[14px] font-bold text-[#475569]">Phone Number <span className="text-red-500">*</span></label>
-                    <div className="flex bg-[#f8fafc] border border-slate-200 rounded-lg overflow-hidden focus-within:border-[#f97316] transition-colors">
-                       <input type="tel" placeholder="E.g. Enter 10 Digit Mobile No." className="w-full bg-transparent px-4 py-3 text-[15px] focus:outline-none" />
-                       <div className="flex items-center justify-center bg-transparent pr-4 shrink-0">
-                         <span className="text-xl">🇮🇳</span>
-                       </div>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <label className="text-[14px] font-bold text-[#475569]">Email Address <span className="text-red-500">*</span></label>
-                    <input type="email" placeholder="xyz@gmail.com" className="w-full bg-[#f8fafc] border border-slate-200 rounded-lg px-4 py-3 text-[15px] focus:outline-none focus:border-[#f97316] transition-colors" />
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className="text-[14px] font-bold text-[#475569]">Full Address <span className="text-red-500">*</span></label>
-                    <input type="text" placeholder="Detect My Current Location" className="w-full bg-[#f8fafc] border border-slate-200 rounded-lg px-4 py-3 text-[15px] focus:outline-none focus:border-[#f97316] transition-colors" />
-                  </div>
-                </div>
-                
-                <div className="pt-2 flex justify-end">
-                   <button type="button" className="bg-[#0b57d0] hover:bg-[#0842a0] text-white font-bold py-3 px-10 rounded-lg transition-colors text-[14px] shadow-sm">
-                     Next
-                   </button>
-                </div>
-             </form>
+                          <ServiceLeadForm />
           </div>
         </div>
       </section>
@@ -438,9 +406,9 @@ export default function DomesticCookPage() {
              <button className="bg-[#f97316] hover:bg-[#ea580c] text-white font-bold py-4 px-8 rounded-lg shadow-sm hover:-translate-y-0.5 transition-all">
                 Book a Home Cook Now
              </button>
-             <button className="bg-white text-[#f97316] border-2 border-[#f97316] hover:bg-orange-50 font-bold py-4 px-8 rounded-lg transition-all hover:-translate-y-0.5">
+             <a href="#salary-guide" className="bg-white text-[#f97316] border-2 border-[#f97316] hover:bg-orange-50 font-bold py-4 px-8 rounded-lg transition-all hover:-translate-y-0.5">
                 View Salary Guide
-             </button>
+             </a>
           </div>
         </div>
       </section>

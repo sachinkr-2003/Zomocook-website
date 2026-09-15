@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { ChefHat, Quote, ArrowRight, Award, History, Sparkles } from 'lucide-react';
 
 export default function ExpertsPage() {
@@ -62,7 +63,7 @@ export default function ExpertsPage() {
             <div className="w-full max-w-[320px] lg:max-w-[380px] relative rounded-3xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border-[8px] border-white bg-white transform transition-transform duration-700 ease-out group-hover:scale-[1.02] group-hover:rotate-1">
               <div className="w-full h-full bg-slate-100 relative overflow-hidden aspect-square lg:aspect-[4/4.5]">
                 <img 
-                  src="https://images.unsplash.com/photo-1577219492769-b63a779fac28?q=80&w=800&auto=format&fit=crop" 
+                  src="/mentor.png" 
                   alt="Shalini Lall"
                   className="w-full h-full object-cover object-center transform transition-transform duration-1000 group-hover:scale-110"
                 />
@@ -129,7 +130,7 @@ export default function ExpertsPage() {
             <div className="w-full max-w-[320px] lg:max-w-[380px] relative rounded-3xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(2,74,157,0.3)] border-[8px] border-[#024a9d] bg-[#024a9d] transform transition-transform duration-700 ease-out group-hover:scale-[1.02] group-hover:-rotate-1">
               <div className="w-full h-full bg-slate-100 relative overflow-hidden aspect-square lg:aspect-[4/4.5]">
                 <img 
-                  src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?q=80&w=800&auto=format&fit=crop" 
+                  src="/executive-chef.png" 
                   alt="Vikram - Executive Chef"
                   className="w-full h-full object-cover object-top transform transition-transform duration-1000 group-hover:scale-110"
                 />
@@ -158,8 +159,8 @@ export default function ExpertsPage() {
             <div className="w-full max-w-[320px] lg:max-w-[380px] relative rounded-3xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)] border-[8px] border-white bg-white transform transition-transform duration-700 ease-out group-hover:scale-[1.02] group-hover:rotate-1">
               <div className="w-full h-full bg-slate-100 relative overflow-hidden aspect-square lg:aspect-[4/4.5] before:absolute before:inset-0 before:bg-gradient-to-t before:from-black/60 before:to-transparent before:z-10">
                 <img 
-                  src="https://images.unsplash.com/photo-1544168190-79c17527004f?q=80&w=800&auto=format&fit=crop" 
-                  alt="Satyam Pandey"
+                  src="/cdp.png" 
+                  alt="Satyam Pandey - CDP"
                   className="w-full h-full object-cover object-top transform transition-transform duration-1000 group-hover:scale-110"
                 />
               </div>
@@ -235,9 +236,9 @@ export default function ExpertsPage() {
             
             {/* Col 4: Button */}
             <div className="w-full flex justify-center lg:justify-end lg:pr-6 text-center lg:text-right">
-              <button className="bg-white text-[#024a9d] font-bold px-10 py-4 rounded-xl text-lg hover:bg-slate-50 transition-colors shadow-md whitespace-nowrap">
+              <Link href="/contact" className="bg-white text-[#024a9d] font-bold px-10 py-4 rounded-xl text-lg hover:bg-slate-50 transition-colors shadow-md whitespace-nowrap inline-block text-center">
                 Hire Now!
-              </button>
+              </Link>
             </div>
 
           </div>

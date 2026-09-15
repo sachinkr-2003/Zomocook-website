@@ -3,6 +3,7 @@ import React from 'react';
 import Presence from '@/components/Presence';
 import { Calendar, CheckCircle2, Clock, MapPin } from 'lucide-react';
 import IndiaMapSVG from '@/components/IndiaMapSVG';
+import ServiceLeadForm from '@/components/forms/ServiceLeadForm';
 
 export default function PayRegistrationChargePage() {
   return (
@@ -50,64 +51,7 @@ export default function PayRegistrationChargePage() {
           </div>
           
           <div className="bg-white lg:shadow-2xl lg:shadow-blue-900/5 lg:border lg:border-slate-100 rounded-3xl p-2 lg:p-12">
-            <form className="space-y-7 sm:space-y-10">
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12">
-                {/* Input Name */}
-                <div className="relative border-b border-slate-300 focus-within:border-blue-500 transition-colors pb-1.5">
-                  <input type="text" placeholder="Name *" className="w-full text-base sm:text-lg text-slate-800 focus:outline-none placeholder-slate-400 font-semibold bg-transparent" />
-                </div>
-
-                {/* Input Phone */}
-                <div className="relative flex items-center border-b border-slate-300 focus-within:border-blue-500 transition-colors pb-1.5">
-                  <span className="mr-3 select-none text-xl sm:text-2xl">🇮🇳</span>
-                  <input type="tel" placeholder="Phone *" className="w-full text-base sm:text-lg text-slate-800 focus:outline-none placeholder-slate-400 font-semibold bg-transparent" />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12">
-                {/* Input Email */}
-                <div className="relative border-b-2 border-[#38bdf8] pb-1.5 transition-colors focus-within:border-blue-600">
-                  <input type="email" placeholder="Email Address *" className="w-full text-base sm:text-lg text-slate-800 focus:outline-none placeholder-slate-400 font-semibold bg-transparent" />
-                </div>
-
-                {/* Date Input */}
-                <div className="relative border-b border-slate-300 focus-within:border-blue-500 transition-colors pb-1.5 flex items-center">
-                  <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-slate-400 mr-3" />
-                  <input 
-                    type="text"
-                    placeholder="Opening/Trial/Joining Date" 
-                    className="w-full text-base sm:text-lg text-slate-800 focus:outline-none placeholder-slate-400 font-semibold bg-transparent"
-                    onFocus={(e) => (e.target.type = "date")}
-                    onBlur={(e) => (e.target.value === "" ? (e.target.type = "text") : null)}
-                  />
-                </div>
-              </div>
-
-              {/* Textarea */}
-              <div className="relative pt-2">
-                <textarea 
-                  rows={4} 
-                  placeholder="Please Mention Requirment..." 
-                  className="w-full border-b border-slate-300 lg:border lg:rounded-xl p-2 lg:p-5 text-base sm:text-lg text-slate-800 focus:outline-none focus:border-blue-500 placeholder-slate-400 font-semibold resize-none lg:bg-slate-50 lg:focus:bg-white transition-all shadow-sm"
-                ></textarea>
-              </div>
-
-              {/* Consent Checkbox */}
-              <div className="flex items-start gap-4 mt-6 bg-blue-50/50 p-4 rounded-xl border border-blue-100/50">
-                <input type="checkbox" id="consent" className="mt-1 w-5 h-5 sm:w-6 sm:h-6 rounded border-blue-300 text-blue-600 focus:ring-blue-500 shrink-0 cursor-pointer" />
-                <label htmlFor="consent" className="text-sm sm:text-base font-medium text-slate-700 leading-relaxed cursor-pointer select-none">
-                  <strong className="text-slate-900 block mb-1 text-base sm:text-lg">Yes, I agree <span className="text-red-500 text-sm">*</span></strong>
-                  This is Premium Chef service and Client have to pay a one time Refundable, Registration Fess <strong className="text-slate-900 bg-slate-100 px-1 rounded">Rs.299/-</strong> to validate the requirement and Secure the Hiring process.
-                </label>
-              </div>
-
-              <div className="pt-4 flex justify-center lg:justify-end">
-                <button type="button" className="w-full lg:w-auto lg:min-w-[280px] bg-gradient-to-r from-[#18a4d4] to-[#024a9d] hover:from-[#128db8] hover:to-[#033c7d] text-white font-extrabold py-4 sm:py-5 px-10 rounded-xl transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 text-sm sm:text-base uppercase tracking-widest cursor-pointer">
-                  Submit Registration
-                </button>
-              </div>
-            </form>
+            <ServiceLeadForm />
           </div>
         </div>
       </section>

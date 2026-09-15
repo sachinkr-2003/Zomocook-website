@@ -1,3 +1,6 @@
+"use client";
+import React from 'react';
+import Link from 'next/link';
 import { 
   ChefHat, 
   GraduationCap, 
@@ -19,61 +22,40 @@ export default function TrainingPage() {
     <div className="min-h-screen bg-slate-50 font-sans overflow-x-hidden selection:bg-blue-200">
       
       {/* 1. HERO SECTION */}
-      <section className="relative bg-[#024a9d] pt-28 pb-16 lg:pt-36 lg:pb-32 overflow-hidden flex items-center min-h-[70vh] lg:min-h-[80vh]">
-        {/* Decorative Background Elements */}
-        <div className="absolute top-0 right-0 w-[50vw] h-[100%] bg-blue-500/20 blur-[120px] pointer-events-none"></div>
-        <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-cyan-400/20 blur-[130px] pointer-events-none"></div>
+      <section className="relative pt-32 pb-12 lg:pt-40 lg:pb-16 overflow-hidden flex items-center justify-center text-center bg-slate-900 border-b-[4px] border-[#38bdf8]">
+        {/* Background Image & Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=1600&auto=format&fit=crop" 
+            alt="Chef Training Background" 
+            className="w-full h-full object-cover object-top opacity-50"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-[#024a9d]/70 to-[#024a9d]/95"></div>
+        </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-            
-            {/* Text Content */}
-            <div className="text-center lg:text-left pt-10 sm:pt-0">
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] sm:text-xs font-black uppercase tracking-widest px-4 py-2 rounded-full mb-6 sm:mb-8">
-                <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
-                Zomocook Academy
-              </div>
-              
-              <h1 className="text-[38px] sm:text-5xl lg:text-[64px] font-black text-white leading-[1.1] mb-6 tracking-tight relative">
-                Become A <br className="hidden lg:block"/>
-                <span className="text-blue-200">Professional Cook</span> <br className="hidden lg:block"/>
-                in 15 Days
-              </h1>
-              <p className="text-blue-50 text-base sm:text-lg lg:text-xl font-medium max-w-xl mx-auto lg:mx-0 leading-relaxed opacity-95 mb-10 border-l-4 border-blue-400 pl-4 text-left">
-                Learn Cooking & Hospitality Skills with Practical Training + Job Placement Support
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button className="bg-white text-[#024a9d] hover:bg-blue-50 font-bold py-4 px-8 rounded-xl transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 flex items-center justify-center gap-2 shadow-black/10">
-                  Explore Courses
-                  <ArrowRight className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
-            
-            {/* Right Image */}
-            <div className="flex justify-center lg:justify-end items-center relative w-full h-full mt-4 sm:mt-0">
-              <div className="relative z-10 w-full max-w-[400px] lg:max-w-[460px] rounded-3xl p-1.5 bg-white/5 backdrop-blur-3xl border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.4)] transform transition-transform duration-700 hover:scale-[1.02] hover:-translate-y-2">
-                <img 
-                   src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=800&auto=format&fit=crop" 
-                   alt="Professional Cook Training"
-                   className="w-full h-auto aspect-[4/5] object-cover rounded-2xl"
-                />
-                
-                {/* Floating Badge */}
-                <div className="absolute -bottom-6 -left-6 sm:-left-10 bg-white p-4 sm:p-5 rounded-2xl shadow-2xl border border-slate-100 flex items-center gap-4 animate-bounce hover:animate-none transition-all duration-300">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Briefcase className="text-[#024a9d] w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="text-slate-900 font-bold text-[15px] leading-tight">Job Placement</h4>
-                    <p className="text-slate-500 font-medium text-xs">100% Support</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10 w-full flex flex-col items-center">
+          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+            <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,1)]"></span>
+            Zomocook Academy
           </div>
+          
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.15] mb-4 tracking-tight drop-shadow-md">
+            Become A <br />
+            Professional Cook <br />
+            <span className="text-[#38bdf8] drop-shadow-lg">in 15 Days</span>
+          </h1>
+          
+          <p className="text-white/90 text-[13px] sm:text-base font-medium max-w-xl mx-auto leading-relaxed mb-6 drop-shadow">
+            Learn Cooking & Hospitality Skills with Practical Training + Job Placement Support
+          </p>
+          
+          <button 
+            onClick={() => document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' })}
+            className="bg-[#e11d48] text-white hover:bg-[#be123c] font-bold py-2.5 px-6 sm:py-3 sm:px-8 rounded-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2 group text-sm"
+          >
+            Explore Courses
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
         </div>
       </section>
 
@@ -107,7 +89,7 @@ export default function TrainingPage() {
       </section>
 
       {/* 3. COURSES SECTION */}
-      <section className="py-20 lg:py-32 bg-slate-50 relative border-t border-slate-100">
+      <section id="courses" className="py-20 lg:py-32 bg-slate-50 relative border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
             <h2 className="text-[32px] sm:text-4xl lg:text-5xl font-black text-[#024a9d] tracking-tight mb-4 leading-tight">
@@ -137,9 +119,11 @@ export default function TrainingPage() {
                  <p className="text-[13px] text-slate-500 font-bold mb-1">Duration: <span className="text-green-600">30 Days Program</span></p>
                  <p className="text-[13px] text-slate-500 font-bold">Course Fees: <span className="text-green-600">Rs.14,999/-</span></p>
                </div>
-               <button className="w-full bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wider relative overflow-hidden group/btn">
-                 <span className="relative z-10 flex items-center gap-2">View Course <ArrowRight className="w-4 h-4" /></span>
-               </button>
+               <Link href="/training/chef-training">
+                 <button className="w-full bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wider relative overflow-hidden group/btn">
+                   <span className="relative z-10 flex items-center gap-2">View Course <ArrowRight className="w-4 h-4" /></span>
+                 </button>
+               </Link>
             </div>
 
             {/* Course 2 */}
@@ -157,9 +141,11 @@ export default function TrainingPage() {
                  <p className="text-[13px] text-slate-500 font-bold mb-1">Duration: <span className="text-green-600">10 Days Program</span></p>
                  <p className="text-[13px] text-slate-500 font-bold">Course Fees: <span className="text-green-600">Rs.9,999/-</span></p>
                </div>
+               <Link href="/training/special-courses">
                <button className="w-full bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
                  View Course <ArrowRight className="w-4 h-4" />
                </button>
+               </Link>
             </div>
 
             {/* Course 3 */}
@@ -177,9 +163,11 @@ export default function TrainingPage() {
                  <p className="text-[13px] text-slate-500 font-bold mb-1">Duration: <span className="text-green-600">30 Days Program</span></p>
                  <p className="text-[13px] text-slate-500 font-bold">Course Fees: <span className="text-green-600">Rs.14,999/-</span></p>
                </div>
+               <Link href="/training/cuisine-courses">
                <button className="w-full bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
                  View Course <ArrowRight className="w-4 h-4" />
                </button>
+               </Link>
             </div>
 
             {/* Course 4 */}
@@ -197,55 +185,57 @@ export default function TrainingPage() {
                  <p className="text-[13px] text-slate-500 font-bold mb-1">Duration: <span className="text-green-600">5 Days Program</span></p>
                  <p className="text-[13px] text-slate-500 font-bold">Course Fees: <span className="text-green-600">Rs.3,999/-</span></p>
                </div>
+               <Link href="/training/staff-training">
                <button className="w-full bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
                  View Course <ArrowRight className="w-4 h-4" />
                </button>
+               </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* 4. WHY CHOOSE US & PROGRAM HIGHLIGHTS */}
-      <section className="py-20 lg:py-32 px-4 sm:px-6 bg-white border-t border-slate-100">
+      <section className="py-12 lg:py-16 px-4 sm:px-6 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto">
           
-          <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
-            <h2 className="text-[32px] sm:text-4xl lg:text-5xl font-black text-[#024a9d] tracking-tight mb-4 leading-tight">
+          <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#024a9d] tracking-tight mb-2 leading-tight">
               Why Choose Zomocook Training?
             </h2>
-            <p className="text-slate-600 font-bold text-base sm:text-xl">
+            <p className="text-slate-500 font-bold text-[13px] sm:text-base">
               Practical Training + Job Placement Support
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 sm:gap-12 mb-24">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8 mb-16">
             
             <div className="flex flex-col items-center text-center group">
-              <div className="w-20 h-20 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center mb-6 group-hover:-translate-y-2 transition-transform duration-300">
-                <HandPlatter className="w-10 h-10" />
+              <div className="w-16 h-16 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center mb-4 group-hover:-translate-y-1 transition-transform duration-300">
+                <HandPlatter className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold text-[#024a9d] mb-3">Hands On Training</h3>
-              <p className="text-slate-500 font-medium text-[15px] leading-relaxed max-w-[280px]">
+              <h3 className="text-lg font-bold text-[#024a9d] mb-2">Hands On Training</h3>
+              <p className="text-slate-500 font-medium text-sm leading-relaxed max-w-[280px]">
                 100% Practical Training from Experienced Professional Chefs.
               </p>
             </div>
 
             <div className="flex flex-col items-center text-center group">
-              <div className="w-20 h-20 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center mb-6 group-hover:-translate-y-2 transition-transform duration-300">
-                <IndianRupee className="w-10 h-10" />
+              <div className="w-16 h-16 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center mb-4 group-hover:-translate-y-1 transition-transform duration-300">
+                <IndianRupee className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold text-[#024a9d] mb-3">Affordable Fees Structure</h3>
-              <p className="text-slate-500 font-medium text-[15px] leading-relaxed max-w-[280px]">
+              <h3 className="text-lg font-bold text-[#024a9d] mb-2">Affordable Fees</h3>
+              <p className="text-slate-500 font-medium text-sm leading-relaxed max-w-[280px]">
                 Get the best training experience at a cost-effective price.
               </p>
             </div>
 
             <div className="flex flex-col items-center text-center group">
-              <div className="w-20 h-20 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center mb-6 group-hover:-translate-y-2 transition-transform duration-300">
-                <Briefcase className="w-10 h-10" />
+              <div className="w-16 h-16 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center mb-4 group-hover:-translate-y-1 transition-transform duration-300">
+                <Briefcase className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold text-[#024a9d] mb-3">Job Placement</h3>
-              <p className="text-slate-500 font-medium text-[15px] leading-relaxed max-w-[280px]">
+              <h3 className="text-lg font-bold text-[#024a9d] mb-2">Job Placement</h3>
+              <p className="text-slate-500 font-medium text-sm leading-relaxed max-w-[280px]">
                 Partnered with 30+ brands and 650+ restaurants for placement opportunities.
               </p>
             </div>
@@ -274,7 +264,7 @@ export default function TrainingPage() {
       </section>
 
       {/* 5. TRAINING CENTER (Map) */}
-      <section className="py-20 lg:py-32 bg-slate-50 border-t border-slate-100 px-4 sm:px-6 relative">
+      <section className="py-12 lg:py-16 bg-slate-50 border-t border-slate-100 px-4 sm:px-6 relative">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#024a9d] tracking-tight mb-8">
@@ -311,15 +301,15 @@ export default function TrainingPage() {
       </section>
 
       {/* 6. FAQ SECTION (Styled List) */}
-      <section className="py-20 lg:py-32 px-4 sm:px-6 bg-white border-t border-slate-100 relative">
+      <section className="py-12 lg:py-16 px-4 sm:px-6 bg-white border-t border-slate-100 relative">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 sm:mb-20">
-            <h2 className="text-[32px] sm:text-4xl lg:text-5xl font-black text-[#024a9d] tracking-tight">
+          <div className="text-center mb-8 sm:mb-10">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#024a9d] tracking-tight">
               FAQ's
             </h2>
           </div>
 
-          <div className="space-y-6 sm:space-y-8">
+          <div className="space-y-4 sm:space-y-5">
             
             {[
               {
@@ -355,16 +345,32 @@ export default function TrainingPage() {
                 a: "Zomocook offers comprehensive chef team solutions for both new and running restaurants. Our services include: Experienced Chefs Kitchen Staff, Customized Solutions and also help to setup kitchen and all required documentation process."
               },
               {
-                q: "Can I find temporary staff from Zomocook in Lucknow?",
-                a: "Yes, we offer emergency and short-term temporary staffing solutions across Lucknow for any immediate operational requirements."
+                q: "Can I find temporary staff from Zomocook in Lucknow when our chef goes on leave?",
+                a: "Yes, we will provide temporary staff solutions to run a smooth kitchen."
+              },
+              {
+                q: "Can Zomocook help us onboard online food delivery platforms?",
+                a: "Yes, we are a staffing partner for Zomato Restaurant Service Hub. We help you with onboarding on Zomato and Swiggy platforms."
+              },
+              {
+                q: "Can Zomocook provide staff on a contract basis for guaranteed reliability?",
+                a: "Yes, we provide staffing services on multiple service plans depending on customer requirements."
+              },
+              {
+                q: "How much time will Zomocook take to replace a chef?",
+                a: "We proceed with staff replacement after receiving a replacement request from either the client or staff side. Generally, we take 2-4 days to replace staff with a new one. It also depends on distance and availability of staff at your location."
+              },
+              {
+                q: "Is Zomocook available pan-India?",
+                a: "Yes, we are available pan-India with various cook services, Our recent development in Andaman & Nicobar Islands for chef requirement services."
               }
             ].map((faq, index) => (
               <div key={index} className="bg-slate-50/50 rounded-2xl border border-slate-100 overflow-hidden hover:shadow-md transition-shadow group">
-                <div className="bg-slate-100/80 px-6 sm:px-8 py-5 flex items-start gap-4">
-                  <h3 className="text-[#0e1726] font-bold text-base sm:text-lg flex-1 leading-snug">{faq.q}</h3>
+                <div className="bg-slate-100/80 px-4 sm:px-6 py-3.5 flex items-start gap-4">
+                  <h3 className="text-[#0e1726] font-bold text-[15px] sm:text-base flex-1 leading-snug">{faq.q}</h3>
                 </div>
-                <div className="px-6 sm:px-8 py-6 bg-white">
-                  <p className="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+                <div className="px-4 sm:px-6 py-4 bg-white">
+                  <p className="text-slate-600 font-medium text-[13px] sm:text-sm leading-relaxed">
                     {faq.a}
                   </p>
                 </div>
@@ -375,7 +381,29 @@ export default function TrainingPage() {
         </div>
       </section>
 
-      {/* 7. PRESENCE FOOTER */}
+      {/* 7. SEO KEYWORDS BLOCK */}
+      <section className="py-12 bg-white px-4 sm:px-6 relative">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-[10px] sm:text-xs text-slate-300 leading-relaxed text-justify opacity-60 font-medium">
+            Chef training in Delhi, chef training in Mumbai, chef training in Bangalore, chef training in Hyderabad, chef training in Chennai, chef training in Kolkata, chef training in Pune, chef training in Ahmedabad, chef training in Jaipur, chef training in Chandigarh, chef training in Noida, chef training in Gurgaon, chef training in Ghaziabad, chef training in Faridabad, chef training in Lucknow, chef training in Kanpur, chef training in Indore, chef training in Bhopal, chef training in Patna, chef training in Ranchi, chef training in Nagpur, chef training in Surat, chef training in Vadodara, chef training in Nashik, chef training in Agra, chef training in Varanasi, chef training in Prayagraj, chef training in Dehradun, chef training in Jodhpur, chef training in Udaipur, chef training in Raipur, chef training in Bhubaneswar, chef training in Guwahati, chef training in Coimbatore,
+            cooking classes in Mumbai, cooking classes in Bangalore, cooking classes in Hyderabad, cooking classes in Chennai, cooking classes in Kolkata, cooking classes in Pune, cooking classes in Ahmedabad, cooking classes in Jaipur, cooking classes in Chandigarh, cooking classes in Noida, cooking classes in Gurgaon, cooking classes in Ghaziabad, cooking classes in Faridabad, cooking classes in Lucknow, cooking classes in Kanpur, cooking classes in Indore, cooking classes in Bhopal, cooking classes in Patna, cooking classes in Ranchi, cooking classes in Nagpur, cooking classes in Surat, cooking classes in Vadodara, cooking classes in Nashik, cooking classes in Agra, cooking classes in Varanasi, cooking classes in Prayagraj, cooking classes in Dehradun, cooking classes in Jodhpur, cooking classes in Udaipur, cooking classes in Raipur, cooking classes in Bhubaneswar, cooking classes in Guwahati, cooking classes in Coimbatore,
+            cook training in Delhi, cook training in Mumbai, cook training in Bangalore, cook training in Hyderabad, cook training in Chennai, cook training in Kolkata, cook training in Pune, cook training in Ahmedabad, cook training in Jaipur, cook training in Chandigarh, cook training in Noida, cook training in Gurgaon, cook training in Ghaziabad, cook training in Faridabad, cook training in Lucknow, cook training in Kanpur, cook training in Indore, cook training in Bhopal, cook training in Patna, cook training in Ranchi, cook training in Nagpur, cook training in Surat, cook training in Vadodara, cook training in Nashik, cook training in Agra, cook training in Varanasi, cook training in Prayagraj, cook training in Dehradun, cook training in Jodhpur, cook training in Udaipur, cook training in Raipur, cook training in Bhubaneswar, cook training in Guwahati, cook training in Coimbatore,
+            chef course in Delhi, chef course in Mumbai, chef course in Bangalore, chef course in Hyderabad, chef course in Chennai, chef course in Kolkata, chef course in Pune, chef course in Ahmedabad, chef course in Jaipur, chef course in Chandigarh, chef course in Noida, chef course in Gurgaon, chef course in Ghaziabad, chef course in Faridabad, chef course in Lucknow, chef course in Kanpur, chef course in Indore, chef course in Bhopal, chef course in Patna, chef course in Ranchi, chef course in Nagpur, chef course in Surat, chef course in Vadodara, chef course in Nashik, chef course in Agra, chef course in Varanasi, chef course in Prayagraj, chef course in Dehradun, chef course in Jodhpur, chef course in Udaipur, chef course in Raipur, chef course in Bhubaneswar, chef course in Guwahati, chef course in Coimbatore,
+            chef training with placement in Delhi, chef training with placement in Mumbai, chef training with placement in Bangalore, chef training with placement in Hyderabad, chef training with placement in Chennai, chef training with placement in Kolkata, chef training with placement in Pune, chef training with placement in Ahmedabad, chef training with placement in Jaipur, chef training with placement in Chandigarh, chef training with placement in Noida, chef training with placement in Gurgaon, chef training with placement in Ghaziabad, chef training with placement in Faridabad, chef training with placement in Lucknow,
+            cook training with job in Delhi, cook training with job in Mumbai, cook training with job in Bangalore, cook training with job in Hyderabad, cook training with job in Chennai, cook training with job in Kolkata, cook training with job in Pune, cook training with job in Ahmedabad, cook training with job in Jaipur, cook training with job in Chandigarh, cook training with job in Lucknow,
+            waiter training in Delhi, waiter training in Mumbai, waiter training in Bangalore, waiter training in Hyderabad, waiter training in Chennai, waiter training in Kolkata, waiter training in Pune, waiter training in Ahmedabad, waiter training in Jaipur, waiter training in Chandigarh, waiter training in Lucknow,
+            horeca training in Delhi, horeca training in Mumbai, horeca training in Bangalore, horeca training in Hyderabad, horeca training in Chennai, horeca training in Kolkata, horeca training in Pune, horeca training in Ahmedabad, horeca training in Jaipur, horeca training in Chandigarh, horeca training in Lucknow,
+            hotel staff training in Delhi, hotel staff training in Mumbai, hotel staff training in Bangalore, hotel staff training in Hyderabad, hotel staff training in Chennai, hotel staff training in Kolkata, hotel staff training in Pune, hotel staff training in Ahmedabad, hotel staff training in Jaipur, hotel staff training in Chandigarh, hotel staff training in Lucknow,
+            cook near me, chef near me, private chef near me, cook for home near me, cooking services near me, hire cook near me, hire chef near me, domestic cook near me, home cook near me, personal chef near me,
+            hire cook in Delhi, hire cook in Mumbai, hire cook in Bangalore, hire cook in Hyderabad, hire cook in Chennai, hire cook in Kolkata, hire cook in Pune, hire cook in Ahmedabad, hire cook in Jaipur, hire cook in Lucknow,
+            hire chef in Delhi, hire chef in Mumbai, hire chef in Bangalore, hire chef in Hyderabad, hire chef in Chennai, hire chef in Kolkata, hire chef in Pune, hire chef in Ahmedabad, hire chef in Jaipur, hire chef in Lucknow,
+            cook for home in Delhi, cook for home in Mumbai, cook for home in Bangalore, cook for home in Hyderabad, cook for home in Chennai, cook for home in Pune, cook for home in Ahmedabad, cook for home in Jaipur, cook for home in Lucknow,
+            chef for home party in Delhi, chef for home party in Mumbai, chef for home party in Bangalore, chef for home party in Hyderabad, chef for home party in Chennai, chef for home party in Kolkata, chef for home party in Pune, chef for home party in Ahmedabad, chef for home party in Jaipur, chef for home party in Lucknow
+          </p>
+        </div>
+      </section>
+
+      {/* 8. PRESENCE FOOTER */}
       <Presence />
 
     </div>

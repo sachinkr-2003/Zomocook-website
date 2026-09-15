@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Sparkles, Soup, UtensilsCrossed, Star, MapPin, ChefHat, Check, Heart, Users, Home, Flame, PartyPopper } from 'lucide-react';
+import ServiceLeadForm from '@/components/forms/ServiceLeadForm';
 
 export default function PrivateChefPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -46,9 +47,9 @@ export default function PrivateChefPage() {
           <button className="bg-[#ea580c] hover:bg-[#c2410c] text-white font-bold py-4 px-10 rounded-xl shadow-md transition-colors text-[16px] w-full sm:w-auto">
             Book Waiters Now
           </button>
-          <button className="bg-white border-2 border-[#ea580c] text-[#ea580c] hover:bg-[#fff7ed] font-bold py-3.5 px-10 rounded-xl transition-colors text-[16px] w-full sm:w-auto">
+          <Link href="#signature-menu" scroll={true} className="bg-white border-2 border-[#ea580c] text-[#ea580c] hover:bg-[#fff7ed] font-bold py-3.5 px-10 rounded-xl transition-colors text-[16px] w-full sm:w-auto inline-flex items-center justify-center">
             View Sample Menus
-          </button>
+          </Link>
         </div>
       </section>
 
@@ -117,7 +118,7 @@ export default function PrivateChefPage() {
       </section>
 
       {/* ================= SIGNATURE MENU ================= */}
-      <section className="bg-white pt-12 pb-16 text-center border-t border-slate-100">
+      <section id="signature-menu" className="bg-white pt-12 pb-16 text-center border-t border-slate-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-[28px] sm:text-[36px] font-black text-[#1e293b] leading-tight mb-4">
             Explore Our Signature Menu Collection
@@ -147,9 +148,9 @@ export default function PrivateChefPage() {
                  <li className="py-2.5">Mutton Biryani</li>
                </ul>
 
-               <button className="w-full bg-[#f97316] hover:bg-[#ea580c] text-white font-bold py-3.5 rounded-xl transition-colors shadow-sm">
+               <Link href="#contact-form" className="w-full bg-[#f97316] hover:bg-[#ea580c] text-white font-bold py-3.5 rounded-xl transition-colors shadow-sm block text-center">
                  View 120+ More Dishes
-               </button>
+               </Link>
             </div>
 
             {/* Column 2: Chinese & Asian */}
@@ -172,9 +173,9 @@ export default function PrivateChefPage() {
                  <li className="py-2.5">Chicken Manchurian</li>
                </ul>
 
-               <button className="w-full bg-[#f97316] hover:bg-[#ea580c] text-white font-bold py-3.5 rounded-xl transition-colors shadow-sm">
+               <Link href="#contact-form" className="w-full bg-[#f97316] hover:bg-[#ea580c] text-white font-bold py-3.5 rounded-xl transition-colors shadow-sm block text-center">
                  View 80+ More Dishes
-               </button>
+               </Link>
             </div>
 
             {/* Column 3: Barbecue & Tandoor */}
@@ -197,9 +198,9 @@ export default function PrivateChefPage() {
                  <li className="py-2.5">Tandoori Chicken</li>
                </ul>
 
-               <button className="w-full bg-[#f97316] hover:bg-[#ea580c] text-white font-bold py-3.5 rounded-xl transition-colors shadow-sm">
+               <Link href="#contact-form" className="w-full bg-[#f97316] hover:bg-[#ea580c] text-white font-bold py-3.5 rounded-xl transition-colors shadow-sm block text-center">
                  View 75+ More Dishes
-               </button>
+               </Link>
             </div>
           </div>
 
@@ -224,9 +225,9 @@ export default function PrivateChefPage() {
                  <li className="py-2.5">Chettinad Chicken</li>
                </ul>
 
-               <button className="w-full bg-[#f97316] hover:bg-[#ea580c] text-white font-bold py-3.5 rounded-xl transition-colors shadow-sm">
+               <Link href="#contact-form" className="w-full bg-[#f97316] hover:bg-[#ea580c] text-white font-bold py-3.5 rounded-xl transition-colors shadow-sm block text-center">
                  View 55+ More Dishes
-               </button>
+               </Link>
             </div>
 
             {/* Column 5: Italian & Mexican */}
@@ -249,9 +250,9 @@ export default function PrivateChefPage() {
                  <li className="py-2.5">Chicken Lasagna</li>
                </ul>
 
-               <button className="w-full bg-[#f97316] hover:bg-[#ea580c] text-white font-bold py-3.5 rounded-xl transition-colors shadow-sm">
+               <Link href="#contact-form" className="w-full bg-[#f97316] hover:bg-[#ea580c] text-white font-bold py-3.5 rounded-xl transition-colors shadow-sm block text-center">
                  View 60+ More Dishes
-               </button>
+               </Link>
             </div>
 
             {/* Column 6: Desserts & Beverages */}
@@ -274,9 +275,9 @@ export default function PrivateChefPage() {
                  <li className="py-2.5">Ice Cream Pudding</li>
                </ul>
 
-               <button className="w-full bg-[#f97316] hover:bg-[#ea580c] text-white font-bold py-3.5 rounded-xl transition-colors shadow-sm">
+               <Link href="#contact-form" className="w-full bg-[#f97316] hover:bg-[#ea580c] text-white font-bold py-3.5 rounded-xl transition-colors shadow-sm block text-center">
                  View 80+ More Options
-               </button>
+               </Link>
             </div>
           </div>
 
@@ -324,7 +325,7 @@ export default function PrivateChefPage() {
       </section>
 
       {/* ================= FORM SECTION ================= */}
-      <section className="bg-white border-y border-slate-100 pt-12 pb-16 text-center">
+      <section id="contact-form" className="bg-white border-y border-slate-100 pt-12 pb-16 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
            <h2 className="text-[28px] sm:text-[36px] font-black text-[#1e293b] leading-tight mb-3">
             Turn Your Home into a Restaurant
@@ -340,40 +341,7 @@ export default function PrivateChefPage() {
                Personal Details
              </h3>
              
-             <form className="space-y-5">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  <div className="space-y-1.5 ">
-                    <label className="text-[13.5px] font-bold text-[#475569]">Name <span className="text-red-500">*</span></label>
-                    <input type="text" placeholder="E.g. Ashok Kumar" className="w-full bg-[#f8fafc] border border-slate-200 rounded-lg px-4 py-3 text-[14px] focus:outline-none focus:border-[#f97316] transition-colors" />
-                  </div>
-                  
-                  <div className="space-y-1.5">
-                    <label className="text-[13.5px] font-bold text-[#475569]">Phone Number <span className="text-red-500">*</span></label>
-                    <div className="flex bg-[#f8fafc] border border-slate-200 rounded-lg overflow-hidden focus-within:border-[#f97316] transition-colors">
-                       <input type="tel" placeholder="+91 Enter 10 Digit Mobile No" className="w-full bg-transparent px-4 py-3 text-[14px] focus:outline-none" />
-                       <div className="flex items-center justify-center bg-transparent pr-4 shrink-0">
-                         <span className="text-xl">🇮🇳</span>
-                       </div>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-1.5">
-                    <label className="text-[13.5px] font-bold text-[#475569]">Email Address <span className="text-red-500">*</span></label>
-                    <input type="email" placeholder="E.g. abc@gmail.com" className="w-full bg-[#f8fafc] border border-slate-200 rounded-lg px-4 py-3 text-[14px] focus:outline-none focus:border-[#f97316] transition-colors" />
-                  </div>
-
-                  <div className="space-y-1.5">
-                    <label className="text-[13.5px] font-bold text-[#475569]">Street Address <span className="text-red-500">*</span></label>
-                    <input type="text" placeholder="Detect My Current Location" className="w-full bg-[#f8fafc] border border-slate-200 rounded-lg px-4 py-3 text-[14px] focus:outline-none focus:border-[#f97316] transition-colors" />
-                  </div>
-                </div>
-                
-                <div className="pt-2 flex justify-end">
-                   <button type="button" className="bg-[#ea580c] hover:bg-[#c2410c] text-white font-bold py-3 px-10 rounded-lg transition-colors text-[14px] shadow-sm">
-                     Next
-                   </button>
-                </div>
-             </form>
+             <ServiceLeadForm />
           </div>
         </div>
       </section>
@@ -427,9 +395,9 @@ export default function PrivateChefPage() {
                <button className="bg-[#ea580c] hover:bg-[#c2410c] text-white font-bold py-3 px-8 rounded-xl transition-colors w-full sm:w-auto shadow-sm">
                   Book Waiters Now
                </button>
-               <button className="bg-white border-2 border-[#ea580c] text-[#ea580c] hover:bg-[#fff7ed] font-bold py-2.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-colors w-full sm:w-auto text-[15px]">
+               <a href="tel:+919519808734" className="bg-white border-2 border-[#ea580c] text-[#ea580c] hover:bg-[#fff7ed] font-bold py-2.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-colors w-full sm:w-auto text-[15px]">
                   <span className="text-xl">📞</span> Call Now
-               </button>
+               </a>
             </div>
             
             <div className="mt-6 flex justify-center items-center gap-2 text-[#475569] font-medium tracking-wide text-[14px]">

@@ -133,6 +133,10 @@ export default function Navbar() {
     { name: "Training", href: "/training", hasDropdown: false },
   ];
 
+  if (pathname?.startsWith('/zomo-admin')) {
+    return null;
+  }
+
   return (
     <header className="fixed w-full top-0 z-50 transition-all duration-300">
       {/* Top Bar - Classic Service Vibe */}
@@ -148,7 +152,8 @@ export default function Navbar() {
               <span>info@zomocoock.com</span>
             </a>
           </div>
-          <div className="flex items-center gap-4">
+          {/* Login hidden for now based on user request */}
+          <div className="flex items-center gap-4 hidden">
             <Link href="/login" className="flex items-center gap-1.5 hover:text-white transition-colors">
               <UserRound className="w-4 h-4" />
               <span>Login / Register</span>
@@ -216,9 +221,9 @@ export default function Navbar() {
                         <p className="text-blue-100/90 text-[13px] mb-6 font-medium tracking-wide">
                           Trained | Trusted | Verified
                         </p>
-                        <button className="bg-white text-slate-900 font-bold px-6 py-2.5 rounded-lg text-sm w-fit hover:bg-slate-100 transition-transform hover:scale-105 shadow-sm">
+                        <Link href="/contact" onClick={() => setActiveDropdown(null)} className="bg-white text-slate-900 font-bold px-6 py-2.5 rounded-lg text-sm w-fit hover:bg-slate-100 transition-transform hover:scale-105 shadow-sm block text-center">
                           Hire Now!
-                        </button>
+                        </Link>
                       </div>
 
                     </div>
@@ -309,9 +314,9 @@ export default function Navbar() {
                         <p className="text-blue-100/90 text-[13px] mb-6 font-medium tracking-wide">
                           Trained | Trusted | Verified
                         </p>
-                        <button className="bg-white text-slate-900 font-bold px-6 py-2.5 rounded-lg text-sm w-fit hover:bg-slate-100 transition-transform hover:scale-105 shadow-sm">
+                        <Link href="/contact" onClick={() => setActiveDropdown(null)} className="bg-white text-slate-900 font-bold px-6 py-2.5 rounded-lg text-sm w-fit hover:bg-slate-100 transition-transform hover:scale-105 shadow-sm block text-center">
                           Hire Now!
-                        </button>
+                        </Link>
                       </div>
 
                     </div>

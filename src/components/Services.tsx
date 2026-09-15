@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ChefHat, Home, Utensils, PartyPopper, ArrowRight } from 'lucide-react';
 
 export default function Services() {
@@ -13,6 +14,7 @@ export default function Services() {
       icon: ChefHat,
       iconColor: "text-blue-600",
       iconBg: "bg-blue-50/80",
+      href: "/services/hotel-chefs-waiter-provider",
     },
     {
       id: 2,
@@ -24,6 +26,7 @@ export default function Services() {
       icon: Home,
       iconColor: "text-rose-600",
       iconBg: "bg-rose-50/80",
+      href: "/services/hire-professional-chef-for-home",
     },
     {
       id: 3,
@@ -35,6 +38,7 @@ export default function Services() {
       icon: Utensils,
       iconColor: "text-purple-600",
       iconBg: "bg-purple-50/80",
+      href: "/services/hire-cook-for-daily-basis",
     },
     {
       id: 4,
@@ -46,6 +50,7 @@ export default function Services() {
       icon: PartyPopper,
       iconColor: "text-rose-600",
       iconBg: "bg-rose-50/80",
+      href: "/services/book-chef-on-birthday-party",
     }
   ];
 
@@ -96,14 +101,14 @@ export default function Services() {
 
                 {/* Bottom Premium Button */}
                 <div className="mt-auto w-full">
-                  <button className="relative w-full overflow-hidden group/btn flex items-center justify-center gap-2 bg-[#1d4ed8] hover:bg-[#1e40af] text-white px-6 py-4 rounded-xl font-bold text-sm transition-all shadow-md hover:shadow-lg">
+                  <Link href={service.href} className="relative w-full overflow-hidden group/btn flex items-center justify-center gap-2 bg-[#1d4ed8] hover:bg-[#1e40af] text-white px-6 py-4 rounded-xl font-bold text-sm transition-all shadow-md hover:shadow-lg">
                     <span className="relative z-10 flex items-center gap-2 tracking-wide">
                       {service.btnText}
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </span>
                     {/* Liquid fill overlay for Premium tech feel */}
                     <div className="absolute inset-0 h-full w-0 bg-white/20 transition-all duration-500 ease-out group-hover/btn:w-full z-0 skew-x-12 -ml-8"></div>
-                  </button>
+                  </Link>
                 </div>
 
               </div>

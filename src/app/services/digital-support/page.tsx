@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
+import ServiceLeadForm from '@/components/forms/ServiceLeadForm';
 
 export default function HireNorthIndianChefPage() {
   return (
@@ -40,12 +41,12 @@ export default function HireNorthIndianChefPage() {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-sm sm:max-w-none mx-auto">
-           <button className="w-full sm:w-auto bg-[#004bb4] hover:bg-blue-800 text-white font-black py-4 px-10 rounded-full shadow-[0_8px_20px_rgba(0,75,180,0.2)] transition-transform hover:-translate-y-1 flex items-center justify-center gap-2 text-[15px]">
+           <a href="#registration-form" className="w-full sm:w-auto bg-[#004bb4] hover:bg-blue-800 text-white font-black py-4 px-10 rounded-full shadow-[0_8px_20px_rgba(0,75,180,0.2)] transition-transform hover:-translate-y-1 flex items-center justify-center gap-2 text-[15px]">
              <span className="text-lg">🚀</span> Register Requirement
-           </button>
-           <button className="w-full sm:w-auto bg-white border border-slate-200 text-[#004bb4] hover:bg-slate-50 font-black py-4 px-10 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.03)] transition-transform hover:-translate-y-1 flex items-center justify-center gap-2 text-[15px]">
+           </a>
+           <a href="#salary-guide" className="w-full sm:w-auto bg-white border border-slate-200 text-[#004bb4] hover:bg-slate-50 font-black py-4 px-10 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.03)] transition-transform hover:-translate-y-1 flex items-center justify-center gap-2 text-[15px]">
              <span className="text-lg">💰</span> View Salary Guide
-           </button>
+           </a>
         </div>
       </section>
 
@@ -192,7 +193,7 @@ export default function HireNorthIndianChefPage() {
 
 
       {/* ================= REGISTER REQUIREMENT FORM ================= */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#f8fafc]">
+      <section id="registration-form" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#f8fafc]">
          <div className="max-w-4xl mx-auto text-center">
             <div className="bg-[#eff6ff] text-[#1d4ed8] text-[11px] sm:text-[12px] font-black uppercase tracking-widest px-5 py-2.5 rounded-full mb-8 shadow-sm inline-flex items-center">
               ZOMOCOOK BUSINESS SERVICES
@@ -214,34 +215,7 @@ export default function HireNorthIndianChefPage() {
                  Personal Details
                </h3>
                
-               <form className="space-y-6">
-                 <div className="space-y-2">
-                   <label className="text-[14px] font-bold text-[#475569]">Name <span className="text-red-500">*</span></label>
-                   <input type="text" placeholder="E.g. Owner/Manager name" className="w-full bg-[#f8fafc] border border-slate-200 rounded-lg px-4 py-3.5 text-[15px] focus:outline-none focus:border-[#004bb4] transition-colors" />
-                 </div>
-                 
-                 <div className="space-y-2">
-                   <label className="text-[14px] font-bold text-[#475569]">Phone Number <span className="text-red-500">*</span></label>
-                   <div className="flex bg-[#f8fafc] border border-slate-200 rounded-lg overflow-hidden focus-within:border-[#004bb4] transition-colors">
-                      <div className="flex items-center justify-center bg-transparent pl-4 pr-2 shrink-0 border-r border-slate-200">
-                        <span className="text-lg mr-1.5">🇮🇳</span>
-                        <span className="text-sm font-semibold text-[#1e293b]">▾ +91</span>
-                      </div>
-                      <input type="tel" placeholder="Enter 10 Digit Mobile No." className="w-full bg-transparent px-4 py-3.5 text-[15px] focus:outline-none" />
-                   </div>
-                 </div>
-                 
-                 <div className="space-y-2">
-                   <label className="text-[14px] font-bold text-[#475569]">Email Address <span className="text-red-500">*</span></label>
-                   <input type="email" placeholder="E.g. Cafe@gmail.com" className="w-full bg-[#f8fafc] border border-slate-200 rounded-lg px-4 py-3.5 text-[15px] focus:outline-none focus:border-[#004bb4] transition-colors" />
-                 </div>
-                  
-                 <div className="pt-4">
-                    <button type="button" className="w-full bg-[#004bb4] hover:bg-blue-800 text-white font-bold py-4 rounded-xl transition-colors text-[16px] shadow-sm">
-                      Next
-                    </button>
-                 </div>
-               </form>
+                            <ServiceLeadForm />
             </div>
          </div>
       </section>
