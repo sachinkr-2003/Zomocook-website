@@ -95,59 +95,13 @@ export default function CourseRegistrationPage({ params }: { params: Promise<{ s
             name: formData.fullName,
             phone: formData.phone,
             email: formData.email || 'N/A',
-            sourceType: `Course Registration: ${course.title}`,
+            sourceType: `Course Booking: ${formData.selectedCourse || course.title} (Batch: ${formData.batch}, ${formData.timing}) | Placement: ${formData.placement} | Hostel: ${formData.accommodation}`,
             sourceUrl: window.location.href, 
         })
       });
 
-      // 2. Fetch PayU Hash
-      const res = await fetch('/api/payu/hash', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          amount: 1999, 
-          productinfo: formData.selectedCourse || course.title,
-          firstname: formData.fullName,
-          email: formData.email || 'guest@example.com',
-          phone: formData.phone
-        })
-      });
-      const data = await res.json();
-      
-      if (!data.success) {
-        Swal.fire("Error", "Could not initiate payment. Try again later.", "error");
-        setLoading(false);
-        return;
-      }
-
-      // 3. Create hidden form and submit to PayU
-      const form = document.createElement("form");
-      form.setAttribute("method", "post");
-      form.setAttribute("action", data.action);
-
-      const hiddenFields = [
-          {name: "key", value: data.key},
-          {name: "txnid", value: data.txnid},
-          {name: "amount", value: data.amount},
-          {name: "productinfo", value: data.productinfo},
-          {name: "firstname", value: data.firstname},
-          {name: "email", value: data.email},
-          {name: "phone", value: data.phone},
-          {name: "surl", value: data.surl},
-          {name: "furl", value: data.furl},
-          {name: "hash", value: data.hash},
-      ];
-
-      hiddenFields.forEach(field => {
-          const input = document.createElement("input");
-          input.setAttribute("type", "hidden");
-          input.setAttribute("name", field.name);
-          input.setAttribute("value", field.value.toString());
-          form.appendChild(input);
-      });
-
-      document.body.appendChild(form);
-      form.submit();
+      // 2. Redirect to Cashfree specific payment link provided by user
+      window.location.href = "https://payments.cashfree.com/forms?code=standardpackage";
       
     } catch (err) {
       console.error(err);
@@ -548,7 +502,7 @@ export default function CourseRegistrationPage({ params }: { params: Promise<{ s
                           </button>
                           
                           <p className="text-slate-400 font-medium text-[12px] flex items-center justify-center gap-1.5 pt-2">
-                              🔒 Secure Payment Powered by <span className="font-bold text-[#0b65f0]">PayU</span>
+                              🔒 Secure Payment Powered by <span className="font-bold text-[#0b65f0]">Cashfree Payments</span>
                           </p>
                       </div>
                   </div>
