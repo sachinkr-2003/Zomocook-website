@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Phone, Mail, UserRound, ChefHat, Utensils, Home, PartyPopper, ConciergeBell, Briefcase, Handshake, Verified, ChevronRight } from "lucide-react";
 
 // Massive Services Data Array for Megamenu
@@ -105,6 +106,17 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  
+  // Custom state for Desktop hover to allow forced closing on navigation
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const pathname = usePathname();
+
+  // Close all menus whenever the route changes
+  useEffect(() => {
+    setActiveDropdown(null);
+    setIsOpen(false);
+    setOpenDropdown(null);
+  }, [pathname]);
 
   // Add shadow on scroll for a premium feel
   useEffect(() => {
@@ -160,22 +172,27 @@ export default function Navbar() {
             {/* Desktop Menu - Classic Typography & Hover Effects */}
             <div className="hidden lg:flex items-center space-x-1">
               {navLinks.map((link) => (
-                <div key={link.name} className="relative group px-4 py-8 -my-8 flex items-center">
+                <div 
+                  key={link.name} 
+                  className="relative px-4 py-8 -my-8 flex items-center"
+                  onMouseEnter={() => setActiveDropdown(link.name)}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
                   <Link 
                     href={link.href}
-                    className="flex items-center gap-1 text-[15px] font-semibold text-slate-700 group-hover:text-blue-700 transition-colors"
+                    className="flex items-center gap-1 text-[15px] font-semibold text-slate-700 hover:text-blue-700 transition-colors"
                   >
                     {link.name}
                     {link.hasDropdown && (
-                      <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-blue-700 transition-colors" />
+                      <ChevronDown className={`w-4 h-4 text-slate-400 transition-colors ${activeDropdown === link.name ? 'text-blue-700 rotate-180' : ''}`} />
                     )}
                   </Link>
                   {/* Classic underline animation */}
-                  <span className="absolute bottom-6 left-4 w-0 h-0.5 bg-blue-700 transition-all duration-300 group-hover:w-[calc(100%-2rem)]"></span>
+                  <span className={`absolute bottom-6 left-4 h-0.5 bg-blue-700 transition-all duration-300 ${activeDropdown === link.name ? 'w-[calc(100%-2rem)]' : 'w-0'}`}></span>
 
                   {/* Mega Menu Specifically for About Us */}
                   {link.name === "About Us" && (
-                    <div className="absolute top-[80px] left-1/2 -translate-x-[30%] mt-0 w-[600px] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex overflow-hidden cursor-default border border-slate-100 z-50">
+                    <div className={`absolute top-[80px] left-1/2 -translate-x-[30%] mt-0 w-[600px] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-md transition-all duration-300 flex overflow-hidden cursor-default border border-slate-100 z-50 ${activeDropdown === link.name ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
                       
                       {/* Left Sidebar Links */}
                       <div className="w-[40%] py-8 px-8 bg-white flex flex-col">
@@ -184,10 +201,10 @@ export default function Navbar() {
                           <h4 className="font-extrabold text-[15px] uppercase text-slate-900 tracking-wide">ABOUT US</h4>
                         </div>
                         <ul className="space-y-4 text-[14px] font-medium text-slate-700">
-                          <li><Link href="/experts" className="hover:text-blue-600 transition-colors">Our Experts</Link></li>
-                          <li><Link href="/partner" className="hover:text-blue-600 transition-colors">Join as Partner</Link></li>
-                          <li><Link href="/about" className="text-blue-500 font-semibold">About Company</Link></li>
-                          <li><Link href="/agent" className="hover:text-blue-600 transition-colors">Join As Agent</Link></li>
+                          <li><Link href="/experts" onClick={() => setActiveDropdown(null)} className="hover:text-blue-600 transition-colors block">Our Experts</Link></li>
+                          <li><Link href="/partner" onClick={() => setActiveDropdown(null)} className="hover:text-blue-600 transition-colors block">Join as Partner</Link></li>
+                          <li><Link href="/about" onClick={() => setActiveDropdown(null)} className="text-blue-500 font-semibold block">About Company</Link></li>
+                          <li><Link href="/agent" onClick={() => setActiveDropdown(null)} className="hover:text-blue-600 transition-colors block">Join As Agent</Link></li>
                         </ul>
                       </div>
 
@@ -209,7 +226,7 @@ export default function Navbar() {
 
                   {/* Mega Menu Specifically for Services */}
                   {link.name === "Services" && (
-                    <div className="absolute top-[80px] left-1/2 -translate-x-1/2 mt-0 w-[960px] bg-white shadow-[0_15px_40px_rgba(0,0,0,0.1)] rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden border border-slate-200 z-50 cursor-default">
+                    <div className={`absolute top-[80px] left-1/2 -translate-x-1/2 mt-0 w-[960px] bg-white shadow-[0_15px_40px_rgba(0,0,0,0.1)] rounded-lg transition-all duration-300 overflow-hidden border border-slate-200 z-50 cursor-default ${activeDropdown === link.name ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
                       <div className="p-6">
                         <div className="columns-1 md:columns-3 lg:columns-4 gap-6 space-y-6">
                           {servicesData.map((category, idx) => (
@@ -225,7 +242,8 @@ export default function Navbar() {
                                    <li key={itemIdx} className="flex flex-wrap items-center gap-1.5 hidden:max-w-full">
                                      <Link 
                                        href={`/services/${item.name.toLowerCase().replace(/[\s/]+/g, '-')}`} 
-                                       className="text-[12px] font-medium text-slate-700 hover:text-[#024a9d] transition-colors leading-snug break-words max-w-full"
+                                       onClick={() => setActiveDropdown(null)}
+                                       className="text-[12px] font-medium text-slate-700 hover:text-[#024a9d] transition-colors leading-snug break-words max-w-full block"
                                      >
                                        {item.name}
                                      </Link>
@@ -244,11 +262,58 @@ export default function Navbar() {
                         {/* Global CTA in Dropdown */}
                         <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between">
                            <div className="text-[#024a9d] font-bold text-sm tracking-wide">Trained ! Trusted ! Verified</div>
-                           <Link href="/contact" className="bg-[#1a73e8] hover:bg-blue-600 font-sans text-white text-[15px] font-medium py-2 px-6 rounded transition-colors shadow-sm">
+                           <Link href="/contact" onClick={() => setActiveDropdown(null)} className="bg-[#1a73e8] hover:bg-blue-600 font-sans text-white text-[15px] font-medium py-2 px-6 rounded transition-colors shadow-sm">
                              Hire Now
                            </Link>
                         </div>
+                     </div>
+                    </div>
+                  )}
+
+                  {/* Mega Menu Specifically for Packages */}
+                  {link.name === "Packages" && (
+                    <div className={`absolute top-[80px] left-1/2 -translate-x-[30%] mt-0 w-[600px] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-md transition-all duration-300 flex overflow-hidden cursor-default border border-slate-100 z-50 ${activeDropdown === link.name ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+                      
+                      {/* Left Sidebar Links */}
+                      <div className="w-[45%] py-8 px-6 bg-white flex flex-col">
+                        <div className="flex items-center gap-2 mb-4">
+                          <div className="w-1 h-4 bg-[#024a9d]"></div>
+                          <h4 className="font-extrabold text-[10px] uppercase text-slate-900 tracking-wider">CHOOSE HIGHER FOR HIGHER BENEFITS</h4>
+                        </div>
+                        <ul className="space-y-3.5 text-[14px] font-medium text-slate-700 mb-8">
+                          <li><Link href="/packages/basic-package" onClick={() => setActiveDropdown(null)} className="hover:text-blue-600 transition-colors block">Basic Package</Link></li>
+                          <li>
+                            <Link href="/packages/standard-package" onClick={() => setActiveDropdown(null)} className="hover:text-blue-600 transition-colors flex items-center gap-2">
+                              Standard Package 
+                              <span className="bg-[#db2777] text-white px-1.5 py-0.5 rounded text-[8px] font-bold uppercase tracking-wider">Recommended</span>
+                            </Link>
+                          </li>
+                          <li><Link href="/packages/premium-package" onClick={() => setActiveDropdown(null)} className="hover:text-blue-600 transition-colors block">Premium Package</Link></li>
+                        </ul>
+
+                        <div className="flex items-center gap-2 mb-4">
+                          <div className="w-1 h-4 bg-[#024a9d]"></div>
+                          <h4 className="font-extrabold text-[10px] uppercase text-slate-900 tracking-wider">REGISTRATION PROCESS</h4>
+                        </div>
+                        <ul className="space-y-3.5 text-[14px] font-medium text-slate-700">
+                          <li><Link href="/packages/pay-registration-charge" onClick={() => setActiveDropdown(null)} className="hover:text-blue-600 transition-colors block">Pay Registration Charge</Link></li>
+                          <li><Link href="/packages/book-a-trial" onClick={() => setActiveDropdown(null)} className="hover:text-blue-600 transition-colors block">Book a Trial</Link></li>
+                        </ul>
                       </div>
+
+                      {/* Right Promo Banner */}
+                      <div className="w-[55%] bg-[#024a9d] p-8 flex flex-col justify-center">
+                        <h3 className="text-[26px] font-extrabold text-white mb-2 leading-tight">
+                          Hire A Cook! In Just Few Clicks...
+                        </h3>
+                        <p className="text-blue-100/90 text-[13px] mb-6 font-medium tracking-wide">
+                          Trained | Trusted | Verified
+                        </p>
+                        <button className="bg-white text-slate-900 font-bold px-6 py-2.5 rounded-lg text-sm w-fit hover:bg-slate-100 transition-transform hover:scale-105 shadow-sm">
+                          Hire Now!
+                        </button>
+                      </div>
+
                     </div>
                   )}
                 </div>
@@ -356,6 +421,38 @@ export default function Navbar() {
                        <Link href="/contact" onClick={() => setIsOpen(false)} className="block w-full text-center bg-[#1a73e8] hover:bg-blue-600 text-white font-sans text-sm font-medium py-2.5 rounded shadow-sm transition-colors">
                          Hire Now
                        </Link>
+                     </div>
+                  </div>
+                )}
+                
+                {/* Mobile Submenu for Packages */}
+                {link.name === "Packages" && openDropdown === "Packages" && (
+                  <div className="pl-6 space-y-4 mt-3 border-l-2 border-slate-100 ml-4 mb-2 overflow-hidden">
+                    <div>
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="w-1 h-3.5 bg-[#024a9d]"></div>
+                        <h4 className="font-extrabold text-[10px] uppercase text-slate-500 tracking-wider">CHOOSE HIGHER FOR HIGHER BENEFITS</h4>
+                      </div>
+                      <ul className="space-y-1 pl-3">
+                        <li><Link href="/packages/basic-package" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block py-1.5 text-[13px] font-medium text-slate-600 hover:text-blue-600">Basic Package</Link></li>
+                        <li>
+                          <Link href="/packages/standard-package" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="flex items-center gap-2 py-1.5 text-[13px] font-medium text-slate-600 hover:text-blue-600">
+                            Standard Package
+                            <span className="bg-[#db2777] text-white px-1.5 py-0.5 rounded text-[8px] font-bold uppercase">Recommended</span>
+                          </Link>
+                        </li>
+                        <li><Link href="/packages/premium-package" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block py-1.5 text-[13px] font-medium text-slate-600 hover:text-blue-600">Premium Package</Link></li>
+                      </ul>
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="w-1 h-3.5 bg-[#024a9d]"></div>
+                        <h4 className="font-extrabold text-[10px] uppercase text-slate-500 tracking-wider">REGISTRATION PROCESS</h4>
+                      </div>
+                      <ul className="space-y-1 pl-3">
+                        <li><Link href="/packages/pay-registration-charge" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block py-1.5 text-[13px] font-medium text-slate-600 hover:text-blue-600">Pay Registration Charge</Link></li>
+                        <li><Link href="/packages/book-a-trial" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block py-1.5 text-[13px] font-medium text-slate-600 hover:text-blue-600">Book a Trial</Link></li>
+                      </ul>
                     </div>
                   </div>
                 )}
