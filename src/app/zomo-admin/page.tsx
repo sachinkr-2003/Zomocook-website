@@ -29,6 +29,8 @@ export default function AdminDashboard() {
   const [settingMsg, setSettingMsg] = useState('');
   const [selectedSource, setSelectedSource] = useState<string | null>(null);
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   // Sync password & auth state from memory
   useEffect(() => {
     const savedPin = localStorage.getItem('ZOMO_ADMIN_PASS');
@@ -183,7 +185,7 @@ export default function AdminDashboard() {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center font-sans">
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center font-sans px-4">
         <div className="w-full max-w-sm bg-white p-8 border border-gray-300 rounded-none shadow-sm">
            <h1 className="text-xl font-bold text-gray-800 mb-6 text-center border-b border-gray-200 pb-4 uppercase">
              Zomocook Admin
@@ -220,20 +222,31 @@ export default function AdminDashboard() {
   const newToday = leads.filter(l => new Date(l.createdAt).toDateString() === new Date().toDateString()).length;
 
   return (
-    <div className="min-h-screen bg-gray-100 flex font-sans text-gray-900">
+    <div className="min-h-screen bg-gray-100 flex font-sans text-gray-900 relative">
       
+      {/* MOBILE OVERLAY */}
+      {isSidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setIsSidebarOpen(false)}
+        ></div>
+      )}
+
       {/* 1. SIDEBAR (CLASSIC DARK) */}
-      <aside className="w-60 bg-gray-900 border-r border-gray-800 flex flex-col hidden lg:flex rounded-none shrink-0">
-         <div className="h-14 flex items-center px-4 bg-gray-950 border-b border-gray-800 shrink-0">
+      <aside className={`fixed inset-y-0 left-0 z-50 w-64 bg-gray-900 border-r border-gray-800 flex flex-col rounded-none shrink-0 transform transition-transform duration-300 lg:relative lg:translate-x-0 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+         <div className="h-14 flex items-center justify-between px-4 bg-gray-950 border-b border-gray-800 shrink-0">
            <h1 className="text-xl font-black text-white uppercase tracking-wider">
              Zomocook
            </h1>
+           <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden text-gray-400 hover:text-white">
+             <span className="text-2xl font-bold">&times;</span>
+           </button>
          </div>
          <div className="flex-1 py-4 flex flex-col overflow-y-auto">
            <div className="px-5 text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3 mt-2">Main Navigation</div>
            
            <button 
-             onClick={() => setActiveTab('dashboard')}
+             onClick={() => { setActiveTab('dashboard'); setIsSidebarOpen(false); }}
              className={`w-full flex items-center justify-between px-5 py-3 font-medium text-sm transition-colors rounded-none outline-none ${activeTab === 'dashboard' ? 'bg-blue-800 text-white border-l-4 border-blue-400' : 'text-gray-300 hover:text-white hover:bg-gray-800 border-l-4 border-transparent'}`}
            >
              <div className="flex items-center gap-3"><LayoutDashboard className="w-4 h-4" /> Overview</div>
@@ -241,7 +254,7 @@ export default function AdminDashboard() {
            </button>
            
            <button 
-             onClick={() => setActiveTab('leads')}
+             onClick={() => { setActiveTab('leads'); setIsSidebarOpen(false); }}
              className={`w-full flex items-center justify-between px-5 py-3 font-medium text-sm transition-colors rounded-none outline-none ${activeTab === 'leads' ? 'bg-blue-800 text-white border-l-4 border-blue-400' : 'text-gray-300 hover:text-white hover:bg-gray-800 border-l-4 border-transparent'}`}
            >
              <div className="flex items-center gap-3"><Users className="w-4 h-4" /> CRM Database</div>
@@ -251,7 +264,7 @@ export default function AdminDashboard() {
            <div className="px-5 text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3 mt-8">System</div>
 
            <button 
-             onClick={() => setActiveTab('settings')}
+             onClick={() => { setActiveTab('settings'); setIsSidebarOpen(false); }}
              className={`w-full flex items-center justify-between px-5 py-3 font-medium text-sm transition-colors rounded-none outline-none ${activeTab === 'settings' ? 'bg-blue-800 text-white border-l-4 border-blue-400' : 'text-gray-300 hover:text-white hover:bg-gray-800 border-l-4 border-transparent'}`}
            >
              <div className="flex items-center gap-3"><Settings className="w-4 h-4" /> Auth & Config</div>
@@ -270,17 +283,24 @@ export default function AdminDashboard() {
       </aside>
 
       {/* 2. MAIN CONTENT AREA */}
-      <main className="flex-1 flex flex-col min-w-0">
+      <main className="flex-1 flex flex-col min-w-0 w-full lg:w-auto">
         
         {/* TOP HEADER (SQUARE, LIGHT) */}
-        <header className="h-14 bg-white border-b border-gray-300 flex items-center justify-between px-6 shrink-0 shadow-sm z-10">
-           <div className="flex items-center gap-2">
-              <span className="font-bold text-gray-800 text-sm tracking-wide uppercase">
+        <header className="h-14 bg-white border-b border-gray-300 flex items-center justify-between px-4 sm:px-6 shrink-0 shadow-sm z-10">
+           <div className="flex items-center gap-3">
+              <button 
+                onClick={() => setIsSidebarOpen(true)}
+                className="lg:hidden p-1.5 text-gray-600 hover:bg-gray-100 border border-gray-300 focus:outline-none"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeDasharray="none" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+              </button>
+              <span className="font-bold text-gray-800 text-xs sm:text-sm tracking-wide uppercase truncate">
                 {activeTab === 'dashboard' ? 'System Overview' : activeTab === 'leads' ? 'Lead Database' : 'Settings'}
               </span>
            </div>
            <div className="flex items-center gap-3">
-              <span className="text-xs font-bold text-gray-500 uppercase tracking-widest border border-gray-300 px-3 py-1 bg-gray-50">Admin User</span>
+              <span className="hidden sm:inline-block text-xs font-bold text-gray-500 uppercase tracking-widest border border-gray-300 px-3 py-1 bg-gray-50">Admin User</span>
+              <span className="inline-block sm:hidden text-[10px] font-bold text-gray-500 uppercase border border-gray-300 px-2 py-1 bg-gray-50">Admin</span>
            </div>
         </header>
 

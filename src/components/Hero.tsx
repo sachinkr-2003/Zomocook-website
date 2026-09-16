@@ -4,7 +4,7 @@ import { ShieldCheck, Briefcase, ChevronRight, Star, CheckCircle2 } from 'lucide
 
 export default function Hero() {
   return (
-    <div className="relative pt-28 pb-10 lg:pt-32 lg:pb-16 overflow-hidden bg-gradient-to-br from-blue-50/80 via-white to-red-50/50 min-h-[85vh] flex items-center">
+    <div className="relative pt-36 mt-2 pb-10 lg:pt-32 lg:pb-16 lg:mt-0 overflow-hidden bg-gradient-to-br from-blue-50/80 via-white to-red-50/50 min-h-[85vh] flex items-center">
       {/* Premium Theme Background Glows */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
         <div className="absolute top-[-10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-blue-100/40 blur-[80px]"></div>

@@ -17,7 +17,7 @@ export default function ExpertsPage() {
     <div className="min-h-screen bg-[#f8fafc] font-sans overflow-hidden">
       
       {/* 1. Ultra Premium Hero Header */}
-      <section className="relative pt-[120px] pb-24 lg:pt-[140px] lg:pb-28 bg-slate-950 text-white overflow-hidden z-10">
+      <section className="relative pt-[160px] pb-24 lg:pt-[140px] lg:pb-28 bg-slate-950 text-white overflow-hidden z-10">
         
         {/* Dynamic Abstract Backgrounds */}
         <div className="absolute inset-0 z-0 opacity-40">
