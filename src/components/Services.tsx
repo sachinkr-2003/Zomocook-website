@@ -1,73 +1,64 @@
 import React from 'react';
+import { ChefHat, Home, Utensils, PartyPopper, ArrowRight, Check } from 'lucide-react';
 import Link from 'next/link';
-import { ChefHat, Home, Utensils, PartyPopper, ArrowRight } from 'lucide-react';
 
 export default function Services() {
   const services = [
     {
       id: 1,
       badge: "Commercial",
-      badgeColor: "bg-blue-100 text-blue-700 font-bold",
+      badgeColor: "bg-[#024a9d] text-white font-bold",
       title: "Hotel Staff Service",
       description: "Chef, Waiter, Helper & Kitchen Staff available on urgent demand.",
       btnText: "Hire Now",
       icon: ChefHat,
-      iconColor: "text-blue-600",
-      iconBg: "bg-blue-50/80",
       href: "/services/hotel-chefs-waiter-provider",
     },
     {
       id: 2,
       badge: "Domestic Cook",
-      badgeColor: "bg-red-100 text-red-700 font-bold",
+      badgeColor: "bg-[#d62423] text-white font-bold",
       title: "Home Cook Service",
       description: "Full-Time, Part-Time, Live-In and Family Cook Services.",
       btnText: "Hire Now",
       icon: Home,
-      iconColor: "text-rose-600",
-      iconBg: "bg-rose-50/80",
       href: "/services/hire-professional-chef-for-home",
     },
     {
       id: 3,
-      badge: "Domestic & Commercial",
-      badgeColor: "bg-purple-100 text-purple-700 font-bold",
+      badge: "Dom & Com",
+      badgeColor: "bg-[#0f172a] text-white font-bold",
       title: "Daily Cook Service",
       description: "Reliable daily cooking solutions for homes, offices and businesses.",
       btnText: "Hire Now",
       icon: Utensils,
-      iconColor: "text-purple-600",
-      iconBg: "bg-purple-50/80",
       href: "/services/hire-cook-for-daily-basis",
     },
     {
       id: 4,
       badge: "Domestic",
-      badgeColor: "bg-red-100 text-red-700 font-bold",
+      badgeColor: "bg-[#059669] text-white font-bold",
       title: "Chef For Party",
-      description: "Private chefs for birthdays, house parties, family gatherings and special events.",
+      description: "Private chefs for birthdays, house parties, family gatherings & events.",
       btnText: "Book Chef",
       icon: PartyPopper,
-      iconColor: "text-rose-600",
-      iconBg: "bg-rose-50/80",
       href: "/services/book-chef-on-birthday-party",
     }
   ];
 
   return (
-    <section className="py-24 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="py-24 bg-white relative border-t border-slate-100">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-[40px] font-extrabold text-slate-900 tracking-tight mb-6">
+        <div className="text-center max-w-3xl mx-auto mb-[80px]">
+          <h2 className="text-[34px] md:text-[42px] font-black text-[#0f172a] tracking-tight mb-4">
             Professional Cooking Services
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-medium mb-8 max-w-2xl mx-auto">
+          <p className="text-[15px] sm:text-[17px] text-slate-500 leading-relaxed font-medium mb-6 max-w-2xl mx-auto">
             Hire verified chefs and cooks for homes, hotels, restaurants, cafes and special events across India.
           </p>
-          {/* Gradient Divider matching the reference reversing colors */}
-          <div className="w-24 h-1.5 rounded-full mx-auto bg-gradient-to-r from-[#024a9d] to-[#d62423]"></div>
+          <div className="w-16 h-[5px] rounded-none mx-auto bg-gradient-to-r from-[#024a9d] to-[#d62423]"></div>
         </div>
 
         {/* Services Cards Grid */}
@@ -77,37 +68,44 @@ export default function Services() {
             return (
               <div 
                 key={service.id}
-                className="group relative bg-[#fafcff] rounded-[24px] p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-300 flex flex-col h-full overflow-hidden"
+                className="group relative bg-[#fafcff] rounded-none p-8 border border-slate-200 shadow-sm hover:shadow-[0_15px_30px_-5px_rgba(0,0,0,0.08)] hover:border-[#024a9d] transition-all duration-300 flex flex-col h-full overflow-hidden hover:-translate-y-1.5"
               >
-                {/* Floating Absolute Badge */}
-                <div className={`absolute top-5 right-5 px-3 py-1 text-[11px] uppercase tracking-wider rounded-full shadow-sm ${service.badgeColor}`}>
+                {/* Sharp Corner Badge Top Right */}
+                <div className={`absolute top-0 right-0 px-4 py-1.5 text-[10px] uppercase tracking-widest rounded-none shadow-sm ${service.badgeColor}`}>
                   {service.badge}
                 </div>
 
-                {/* Top Icon Circular Wrapper */}
-                <div className={`w-20 h-20 mx-auto rounded-full ${service.iconBg} flex items-center justify-center mb-6 mt-2 shadow-inner ring-4 ring-white`}>
-                  <Icon className={`w-9 h-9 ${service.iconColor} group-hover:scale-110 transition-transform duration-300`} strokeWidth={1.5} />
+                {/* Top Icon Square Wrapper */}
+                <div className="w-[60px] h-[60px] bg-white rounded-none flex items-center justify-center mb-6 mt-4 border border-slate-200 group-hover:border-[#024a9d] group-hover:bg-blue-50 transition-colors shadow-sm">
+                  <Icon className="w-8 h-8 text-slate-800 group-hover:text-[#024a9d] transition-colors" strokeWidth={1.75} />
                 </div>
                 
                 {/* Center Content */}
-                <div className="flex-1 flex flex-col items-center text-center">
-                  <h3 className="text-[22px] font-black text-slate-900 mb-3">
+                <div className="flex-1 flex flex-col">
+                  <h3 className="text-[20px] font-extrabold text-[#0f172a] mb-3 group-hover:text-[#024a9d] transition-colors tracking-wide">
                     {service.title}
                   </h3>
-                  <p className="text-[14px] text-slate-500 font-medium leading-relaxed mb-8 px-2">
+                  
+                  <div className="w-8 h-0.5 bg-slate-300 mb-4 group-hover:bg-[#024a9d] transition-colors"></div>
+                  
+                  <p className="text-[14px] text-slate-500 font-medium leading-[1.7] mb-8">
                     {service.description}
                   </p>
                 </div>
 
                 {/* Bottom Premium Button */}
-                <div className="mt-auto w-full">
-                  <Link href={service.href} className="relative w-full overflow-hidden group/btn flex items-center justify-center gap-2 bg-[#1d4ed8] hover:bg-[#1e40af] text-white px-6 py-4 rounded-xl font-bold text-sm transition-all shadow-md hover:shadow-lg">
-                    <span className="relative z-10 flex items-center gap-2 tracking-wide">
+                <div className="mt-auto w-full pt-4 border-t border-slate-200">
+                  <div className="flex items-center gap-2 text-[12px] font-bold text-slate-500 uppercase tracking-widest mb-3 hidden">
+                     <Check className="w-3.5 h-3.5 text-green-500" strokeWidth={3}/> Available
+                  </div>
+                  <Link href={service.href} className="relative w-full flex items-center justify-between text-[#024a9d] group/btn">
+                    <span className="font-extrabold text-[15px] tracking-wide relative">
                       {service.btnText}
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#024a9d] transition-all duration-300 group-hover/btn:w-full"></span>
                     </span>
-                    {/* Liquid fill overlay for Premium tech feel */}
-                    <div className="absolute inset-0 h-full w-0 bg-white/20 transition-all duration-500 ease-out group-hover/btn:w-full z-0 skew-x-12 -ml-8"></div>
+                    <div className="w-8 h-8 bg-slate-100 flex items-center justify-center rounded-none group-hover/btn:bg-[#024a9d] transition-colors">
+                       <ArrowRight className="w-4 h-4 text-slate-600 group-hover/btn:text-white group-hover/btn:-rotate-45 transition-all" />
+                    </div>
                   </Link>
                 </div>
 

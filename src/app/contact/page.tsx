@@ -76,8 +76,8 @@ export default function ContactPage() {
         </div>
 
         <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10 w-full flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
-            <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,1)]"></span>
+          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-none-none mb-4">
+            <span className="w-1.5 h-1.5 bg-green-400 rounded-none-none animate-pulse shadow-[0_0_8px_rgba(74,222,128,1)]"></span>
             We are here to help
           </div>
           
@@ -100,9 +100,9 @@ export default function ContactPage() {
             
             {/* LEFT: Contact Information (2 Cols) */}
             <div className="lg:col-span-2 space-y-6">
-              <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border border-slate-100 relative overflow-hidden group h-full">
+              <div className="bg-white rounded-none-none p-8 lg:p-10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border border-slate-100 relative overflow-hidden group h-full">
                 {/* Decorative blob */}
-                <div className="absolute -top-16 -right-16 w-32 h-32 bg-blue-50 rounded-full blur-2xl group-hover:bg-blue-100 transition-colors duration-500"></div>
+                <div className="absolute -top-16 -right-16 w-32 h-32 bg-blue-50 rounded-none-none blur-2xl group-hover:bg-blue-100 transition-colors duration-500"></div>
                 
                 <h3 className="text-2xl font-extrabold text-[#024a9d] mb-8 relative z-10 flex items-center gap-3">
                   <Building2 className="w-6 h-6 text-[#e11d48]" />
@@ -112,7 +112,7 @@ export default function ContactPage() {
                 <div className="space-y-8 relative z-10">
                   {/* Address */}
                   <div className="flex gap-4 items-start">
-                    <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#024a9d] flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-none-none bg-blue-50 text-[#024a9d] flex items-center justify-center shrink-0">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
@@ -126,34 +126,33 @@ export default function ContactPage() {
 
                   {/* Phone */}
                   <div className="flex gap-4 items-start">
-                    <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#024a9d] flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-none-none bg-blue-50 text-[#024a9d] flex items-center justify-center shrink-0">
                       <PhoneCall className="w-5 h-5" />
                     </div>
                     <div>
                       <h4 className="text-slate-900 font-bold mb-1">Call Us</h4>
                       <div className="text-slate-500 text-sm leading-relaxed font-medium space-y-1">
-                        <p className="hover:text-[#024a9d] transition-colors cursor-pointer">+91 91515 28913</p>
-                        <p className="hover:text-[#024a9d] transition-colors cursor-pointer">+91 80091 16913</p>
-                      </div>
+                        <p className="hover:text-[#024a9d] transition-colors cursor-pointer">+91 951 980 8734</p>
+                                              </div>
                     </div>
                   </div>
 
                   {/* Email */}
                   <div className="flex gap-4 items-start">
-                    <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#024a9d] flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-none-none bg-blue-50 text-[#024a9d] flex items-center justify-center shrink-0">
                       <Mail className="w-5 h-5" />
                     </div>
                     <div>
                       <h4 className="text-slate-900 font-bold mb-1">Email Us</h4>
                       <p className="text-slate-500 text-sm leading-relaxed font-medium hover:text-[#024a9d] transition-colors cursor-pointer">
-                        info@zomocoock.com
+                        zomocookhelp@gmail.com
                       </p>
                     </div>
                   </div>
 
                   {/* Timings */}
                   <div className="flex gap-4 items-start">
-                    <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#024a9d] flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-none-none bg-blue-50 text-[#024a9d] flex items-center justify-center shrink-0">
                       <Clock className="w-5 h-5" />
                     </div>
                     <div>
@@ -170,7 +169,7 @@ export default function ContactPage() {
 
             {/* RIGHT: Contact Form (3 Cols) */}
             <div className="lg:col-span-3">
-              <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border border-slate-100">
+              <div className="bg-white rounded-none-none p-8 lg:p-10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border border-slate-100">
                 <div className="mb-8">
                   <h3 className="text-2xl font-extrabold text-[#024a9d] mb-2 flex items-center gap-3">
                     <MessageSquare className="w-6 h-6 text-[#e11d48]" />
@@ -183,13 +182,13 @@ export default function ContactPage() {
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {status === 'error' && (
-                    <div className="bg-red-50 text-red-600 text-sm font-bold p-4 rounded-xl flex items-center gap-2 border border-red-200">
+                    <div className="bg-red-50 text-red-600 text-sm font-bold p-4 rounded-none-none flex items-center gap-2 border border-red-200">
                       <AlertCircle className="w-5 h-5 flex-shrink-0" />
                       {errorMessage}
                     </div>
                   )}
                   {status === 'success' && (
-                    <div className="bg-green-50 text-green-700 text-sm font-bold p-4 rounded-xl flex items-center justify-center gap-2 border border-green-200">
+                    <div className="bg-green-50 text-green-700 text-sm font-bold p-4 rounded-none-none flex items-center justify-center gap-2 border border-green-200">
                       <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
                       Thank you! Your message has been safely received.
                     </div>
@@ -206,7 +205,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         placeholder="John Doe"
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium text-slate-700"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-none-none px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium text-slate-700"
                       />
                     </div>
                     {/* Phone */}
@@ -219,7 +218,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         placeholder="+91 XXXXX XXXXX"
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium text-slate-700"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-none-none px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium text-slate-700"
                       />
                     </div>
                   </div>
@@ -235,7 +234,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         placeholder="johndoe@example.com"
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium text-slate-700"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-none-none px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium text-slate-700"
                       />
                     </div>
                   </div>
@@ -244,7 +243,7 @@ export default function ContactPage() {
                   <button 
                     type="submit"
                     disabled={status === 'loading' || status === 'success'}
-                    className="w-full bg-[#024a9d] hover:bg-[#00387a] text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+                    className="w-full bg-[#024a9d] hover:bg-[#00387a] text-white font-bold py-4 rounded-none-none transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
                   >
                     {status === 'loading' ? 'Sending...' : status === 'success' ? 'Sent!' : 'Send Message'}
                     {status !== 'loading' && status !== 'success' && (
@@ -275,9 +274,9 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="w-full h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-lg border-[6px] border-white relative z-10 group">
+          <div className="w-full h-[400px] lg:h-[500px] rounded-none-none overflow-hidden shadow-lg border-[6px] border-white relative z-10 group">
             {/* Outline overlay to match theme */}
-            <div className="absolute inset-0 border-[3px] border-[#024a9d]/10 rounded-[24px] pointer-events-none z-20"></div>
+            <div className="absolute inset-0 border-[3px] border-[#024a9d]/10 rounded-none-none pointer-events-none z-20"></div>
             
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14234.67795370525!2d80.9348981!3d26.882196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd9bdc32b0f5%3A0xe54e33cf743b27b3!2sSector%20H%2C%20Jankipuram%2C%20Lucknow%2C%20Uttar%20Pradesh%20226021!5e0!3m2!1sen!2sin!4v1703145600000!5m2!1sen!2sin" 

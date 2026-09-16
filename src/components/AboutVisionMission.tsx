@@ -3,31 +3,36 @@ import { Lightbulb, Target } from "lucide-react";
 
 export default function AboutVisionMission() {
   return (
-    <section className="py-10 lg:py-16 bg-slate-50 relative overflow-hidden border-t border-slate-200/60">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+    <section className="py-20 lg:py-24 bg-[#fafbfc] relative overflow-hidden border-b border-slate-200">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         
         {/* VISION SECTION */}
-        <div className="mb-16 lg:mb-20">
+        <div className="mb-20 lg:mb-24">
           <div className="grid lg:grid-cols-12 gap-6 lg:gap-10 items-center">
             {/* Left Side: Title */}
             <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
-              <div className="w-12 h-12 bg-blue-100 text-[#024a9d] rounded-xl flex items-center justify-center mb-4 shadow-sm">
-                <Lightbulb className="w-6 h-6" />
+              {/* Square Icon Wrapper */}
+              <div className="w-[60px] h-[60px] bg-white text-[#d62423] rounded-none border border-slate-200 flex items-center justify-center mb-6 shadow-sm relative">
+                 <div className="absolute top-0 left-0 w-full h-1 bg-[#d62423]"></div>
+                 <Lightbulb className="w-7 h-7" strokeWidth={1.75} />
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#024a9d] tracking-tight mb-2">
+              <h2 className="text-[32px] sm:text-[40px] font-black text-[#0f172a] tracking-tight mb-3">
                 Vision
               </h2>
-              <p className="text-slate-600 font-bold text-sm lg:text-base uppercase tracking-wider">
+              <div className="w-12 h-1 bg-slate-300 mb-4 mx-auto lg:mx-0"></div>
+              <p className="text-[#024a9d] font-bold text-[11px] lg:text-[12px] uppercase tracking-widest">
                 The One-Stop Chef Solution
               </p>
             </div>
 
             {/* Right Side: Content Box */}
             <div className="lg:col-span-8">
-              <div className="bg-gradient-to-r from-blue-600 to-[#024a9d] p-6 sm:p-8 lg:p-10 rounded-2xl shadow-xl text-blue-50 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full blur-[30px] pointer-events-none"></div>
+              <div className="bg-gradient-to-br from-[#024a9d] to-[#1e3a8a] p-8 sm:p-10 lg:p-12 rounded-none shadow-sm text-blue-50 relative overflow-hidden border border-[#024a9d]/50">
+                {/* Square Geometric Accents instead of round blur */}
+                <div className="absolute -top-10 -right-10 w-40 h-40 border-2 border-white/10 rounded-none transform rotate-12 pointer-events-none"></div>
+                <div className="absolute -bottom-10 -left-10 w-32 h-32 border-2 border-white/10 rounded-none transform -rotate-12 pointer-events-none"></div>
                 
-                <p className="relative z-10 text-sm sm:text-[15px] leading-relaxed sm:leading-loose font-medium text-center lg:text-left max-w-3xl mx-auto">
+                <p className="relative z-10 text-[15px] sm:text-[16px] leading-[1.8] font-medium text-center lg:text-left max-w-3xl mx-auto">
                   At Zomocook, our vision is to become the go-to platform for culinary expertise, 
                   where anyone can experience the joy of exquisite dining, whether at home, in a 
                   restaurant, or at a special event. We aim to empower chefs by providing them with 
@@ -42,24 +47,28 @@ export default function AboutVisionMission() {
         </div>
 
         {/* MISSION SECTION */}
-        <div className="relative max-w-4xl mx-auto rounded-[24px] shadow-[0_15px_40px_-20px_rgba(0,0,0,0.1)] bg-white border border-slate-100 p-8 sm:p-12 overflow-hidden transition-all duration-300">
+        <div className="relative max-w-4xl mx-auto rounded-none shadow-[0_15px_40px_-15px_rgba(0,0,0,0.06)] bg-white border border-slate-200 p-8 sm:p-14 overflow-hidden transition-all duration-300">
           
-          {/* Decorative Corner accents */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50/50 translate-x-1/2 -translate-y-1/2 rounded-full blur-xl pointer-events-none"></div>
+          {/* Decorative Square accents */}
+          <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50/50 translate-x-1/2 -translate-y-1/2 rounded-none pointer-events-none border border-slate-100"></div>
           
           <div className="flex flex-col items-center text-center relative z-10">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-50 border border-blue-100 text-[#024a9d] rounded-full flex items-center justify-center mb-6 shadow-sm">
-              <Target className="w-6 h-6 sm:w-7 sm:h-7" />
+            {/* Square Icon Wrapper */}
+            <div className="w-[60px] h-[60px] bg-white border border-slate-200 text-[#024a9d] rounded-none flex items-center justify-center mb-8 shadow-sm relative">
+              <div className="absolute top-0 left-0 w-full h-1 bg-[#024a9d]"></div>
+              <Target className="w-7 h-7" strokeWidth={1.75} />
             </div>
             
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#024a9d] tracking-tight mb-3">
+            <h2 className="text-[32px] sm:text-[40px] font-black text-[#0f172a] tracking-tight mb-4">
               Our Mission
             </h2>
-            <p className="text-blue-500 font-bold text-[11px] sm:text-xs uppercase tracking-[0.15em] mb-6 pb-6 border-b border-slate-100 w-full max-w-xs mx-auto">
+            <div className="w-16 h-[3px] bg-slate-300 mx-auto mb-5"></div>
+            
+            <p className="text-[#d62423] font-black text-[11px] sm:text-xs uppercase tracking-widest mb-8 w-full max-w-xs mx-auto pb-6 border-b border-slate-100">
               Crafting Memorable Dining Moments
             </p>
             
-            <p className="text-slate-600 text-[13px] sm:text-[15px] leading-relaxed sm:leading-loose font-medium px-0 opacity-95">
+            <p className="text-slate-600 text-[14.5px] sm:text-[16px] leading-[1.8] font-medium px-4 opacity-95">
               Our mission is to connect customers with the best culinary experts, providing personalized, 
               high-quality services that cater to all culinary needs. We are dedicated to making the process 
               of hiring a chef as seamless and straightforward as possible, ensuring that our customers can enjoy 

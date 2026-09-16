@@ -29,34 +29,37 @@ export default function AboutTimeline() {
   ];
 
   return (
-    <section className="py-12 lg:py-16 bg-slate-50 relative overflow-hidden border-t border-slate-200/60">
-      {/* Background Soft Glows */}
-      <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-blue-100/50 rounded-full blur-[100px] -z-10 translate-x-[-30%]"></div>
-      <div className="absolute bottom-10 right-0 w-[300px] h-[300px] bg-blue-50/60 rounded-full blur-[80px] -z-10 translate-x-[20%]"></div>
+    <section className="py-20 lg:py-24 bg-white relative overflow-hidden border-b border-slate-200">
+      {/* Background Soft Glows (Square) */}
+      <div className="absolute top-1/3 left-0 w-[400px] h-[400px] rounded-none bg-blue-100/30 blur-[80px] -z-10 translate-x-[-30%]"></div>
+      <div className="absolute bottom-10 right-0 w-[300px] h-[300px] rounded-none bg-red-100/30 blur-[60px] -z-10 translate-x-[20%]"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         
         {/* Section Header */}
-        <div className="text-center mb-10 lg:mb-14 flex flex-col items-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-[#024a9d] tracking-tight mb-3 leading-tight">
+        <div className="text-center mb-16 lg:mb-20 flex flex-col items-center">
+          <h2 className="text-[32px] sm:text-[40px] lg:text-[42px] font-black text-[#0f172a] tracking-tight mb-4 leading-tight">
             Timeline of Zomocook
           </h2>
-          <div className="w-16 h-1 rounded-full bg-gradient-to-r from-[#024a9d] to-blue-400"></div>
+          <div className="w-16 h-[5px] rounded-none bg-gradient-to-r from-[#024a9d] to-[#d62423]"></div>
         </div>
 
         {/* Timeline Grid (Masonry look or standard grid) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
           {timelines.map((item, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-[20px] p-6 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.06)] border border-blue-50 hover:border-[#024a9d] hover:shadow-[0_15px_40px_-15px_rgba(2,74,157,0.15)] transition-all duration-300 transform hover:-translate-y-1.5 group flex flex-col h-full"
+              className="bg-[#fafcff] rounded-none p-8 pt-10 shadow-sm border border-slate-200 hover:border-[#024a9d] hover:shadow-[0_15px_30px_-5px_rgba(0,0,0,0.06)] transition-all duration-300 transform hover:-translate-y-1.5 group flex flex-col h-full relative"
             >
-              <h3 className="text-blue-600 font-bold text-[17px] sm:text-lg text-center mb-4 pb-3 border-b border-slate-100 group-hover:text-[#024a9d] transition-colors relative">
+              {/* Thin top accent line representing interaction */}
+              <div className="absolute top-0 left-0 w-full h-1 opacity-0 bg-[#024a9d] group-hover:opacity-100 transition-opacity duration-300"></div>
+
+              <h3 className="text-[#024a9d] font-extrabold text-[18px] sm:text-[20px] text-center mb-4 pb-4 border-b border-slate-200 group-hover:text-[#0f172a] transition-colors relative">
                 {item.period}
-                {/* Decorative dot */}
-                <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-blue-100 rounded-full group-hover:bg-[#024a9d] transition-colors shadow-sm"></span>
+                {/* Decorative Square dot instead of round */}
+                <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border border-slate-200 rounded-none group-hover:bg-[#024a9d] group-hover:border-[#024a9d] transition-colors shadow-sm"></span>
               </h3>
-              <p className="text-slate-600 text-[13px] sm:text-sm leading-relaxed text-center font-medium opacity-90 flex-grow">
+              <p className="text-slate-600 text-[14px] sm:text-[14.5px] leading-[1.8] text-center font-medium opacity-90 flex-grow mt-2">
                 {item.description}
               </p>
             </div>

@@ -21,7 +21,7 @@ export default function Footprints() {
   ];
 
   return (
-    <section className="py-24 bg-slate-50 relative overflow-hidden">
+    <section className="pt-8 pb-16 bg-slate-50 relative overflow-hidden">
       
       {/* Subtle Background Glow */}
       <div className="absolute top-[30%] left-[-10%] w-[500px] h-[500px] bg-blue-100/40 blur-[120px] rounded-full pointer-events-none z-0"></div>

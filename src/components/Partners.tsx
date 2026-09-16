@@ -73,7 +73,7 @@ export default function Partners() {
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="pt-12 pb-8 bg-white relative overflow-hidden">
       
       {/* Very faint background accents */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[200px] bg-slate-100/50 blur-[80px] rounded-full pointer-events-none z-0"></div>

@@ -143,13 +143,13 @@ export default function Navbar() {
       <div className={`bg-slate-900 text-gray-300 py-2 transition-all duration-300 ${scrolled ? 'hidden' : 'block'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-xs sm:text-sm font-medium">
           <div className="flex items-center gap-6">
-            <a href="tel:+919876543210" className="flex items-center gap-2 hover:text-white transition-colors">
+            <a href="tel:+919519808734" className="flex items-center gap-2 hover:text-white transition-colors">
               <Phone className="w-4 h-4" />
-              <span>+91 98765 43210</span>
+              <span>+91 951 980 8734</span>
             </a>
-            <a href="mailto:info@zomocoock.com" className="hidden sm:flex items-center gap-2 hover:text-white transition-colors">
+            <a href="mailto:zomocookhelp@gmail.com" className="hidden sm:flex items-center gap-2 hover:text-white transition-colors">
               <Mail className="w-4 h-4" />
-              <span>info@zomocoock.com</span>
+              <span>zomocookhelp@gmail.com</span>
             </a>
           </div>
           {/* Login hidden for now based on user request */}
@@ -197,7 +197,7 @@ export default function Navbar() {
 
                   {/* Mega Menu Specifically for About Us */}
                   {link.name === "About Us" && (
-                    <div className={`absolute top-[80px] left-1/2 -translate-x-[30%] mt-0 w-[600px] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-md transition-all duration-300 flex overflow-hidden cursor-default border border-slate-100 z-50 ${activeDropdown === link.name ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+                    <div className={`absolute top-[80px] left-1/2 -translate-x-[30%] mt-0 w-[600px] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-none-none transition-all duration-300 flex overflow-hidden cursor-default border border-slate-100 z-50 ${activeDropdown === link.name ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
                       
                       {/* Left Sidebar Links */}
                       <div className="w-[40%] py-8 px-8 bg-white flex flex-col">
@@ -221,7 +221,7 @@ export default function Navbar() {
                         <p className="text-blue-100/90 text-[13px] mb-6 font-medium tracking-wide">
                           Trained | Trusted | Verified
                         </p>
-                        <Link href="/contact" onClick={() => setActiveDropdown(null)} className="bg-white text-slate-900 font-bold px-6 py-2.5 rounded-lg text-sm w-fit hover:bg-slate-100 transition-transform hover:scale-105 shadow-sm block text-center">
+                        <Link href="/contact" onClick={() => setActiveDropdown(null)} className="bg-white text-slate-900 font-bold px-6 py-2.5 rounded-none-none text-sm w-fit hover:bg-slate-100 transition-transform hover:scale-105 shadow-sm block text-center">
                           Hire Now!
                         </Link>
                       </div>
@@ -231,7 +231,7 @@ export default function Navbar() {
 
                   {/* Mega Menu Specifically for Services */}
                   {link.name === "Services" && (
-                    <div className={`absolute top-[80px] left-1/2 -translate-x-1/2 mt-0 w-[960px] bg-white shadow-[0_15px_40px_rgba(0,0,0,0.1)] rounded-lg transition-all duration-300 overflow-hidden border border-slate-200 z-50 cursor-default ${activeDropdown === link.name ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+                    <div className={`absolute top-[80px] left-1/2 -translate-x-1/2 mt-0 w-[960px] bg-white shadow-[0_15px_40px_rgba(0,0,0,0.1)] rounded-none-none transition-all duration-300 overflow-hidden border border-slate-200 z-50 cursor-default ${activeDropdown === link.name ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
                       <div className="p-6">
                         <div className="columns-1 md:columns-3 lg:columns-4 gap-6 space-y-6">
                           {servicesData.map((category, idx) => (
@@ -253,7 +253,7 @@ export default function Navbar() {
                                        {item.name}
                                      </Link>
                                      {item.badge && (
-                                       <span className="bg-[#db2777] text-white px-1 py-0.5 rounded text-[8px] font-bold uppercase tracking-wider shadow-sm mt-0.5 shrink-0">
+                                       <span className="bg-[#db2777] text-white px-1 py-0.5 rounded-none text-[8px] font-bold uppercase tracking-wider shadow-sm mt-0.5 shrink-0">
                                          {item.badge}
                                        </span>
                                      )}
@@ -267,7 +267,7 @@ export default function Navbar() {
                         {/* Global CTA in Dropdown */}
                         <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between">
                            <div className="text-[#024a9d] font-bold text-sm tracking-wide">Trained ! Trusted ! Verified</div>
-                           <Link href="/contact" onClick={() => setActiveDropdown(null)} className="bg-[#1a73e8] hover:bg-blue-600 font-sans text-white text-[15px] font-medium py-2 px-6 rounded transition-colors shadow-sm">
+                           <Link href="/contact" onClick={() => setActiveDropdown(null)} className="bg-[#1a73e8] hover:bg-blue-600 font-sans text-white text-[15px] font-medium py-2 px-6 rounded-none transition-colors shadow-sm">
                              Hire Now
                            </Link>
                         </div>
@@ -277,7 +277,7 @@ export default function Navbar() {
 
                   {/* Mega Menu Specifically for Packages */}
                   {link.name === "Packages" && (
-                    <div className={`absolute top-[80px] left-1/2 -translate-x-[30%] mt-0 w-[600px] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-md transition-all duration-300 flex overflow-hidden cursor-default border border-slate-100 z-50 ${activeDropdown === link.name ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+                    <div className={`absolute top-[80px] left-1/2 -translate-x-[30%] mt-0 w-[600px] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-none-none transition-all duration-300 flex overflow-hidden cursor-default border border-slate-100 z-50 ${activeDropdown === link.name ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
                       
                       {/* Left Sidebar Links */}
                       <div className="w-[45%] py-8 px-6 bg-white flex flex-col">
@@ -290,7 +290,7 @@ export default function Navbar() {
                           <li>
                             <Link href="/packages/standard-package" onClick={() => setActiveDropdown(null)} className="hover:text-blue-600 transition-colors flex items-center gap-2">
                               Standard Package 
-                              <span className="bg-[#db2777] text-white px-1.5 py-0.5 rounded text-[8px] font-bold uppercase tracking-wider">Recommended</span>
+                              <span className="bg-[#db2777] text-white px-1.5 py-0.5 rounded-none text-[8px] font-bold uppercase tracking-wider">Recommended</span>
                             </Link>
                           </li>
                           <li><Link href="/packages/premium-package" onClick={() => setActiveDropdown(null)} className="hover:text-blue-600 transition-colors block">Premium Package</Link></li>
@@ -314,7 +314,7 @@ export default function Navbar() {
                         <p className="text-blue-100/90 text-[13px] mb-6 font-medium tracking-wide">
                           Trained | Trusted | Verified
                         </p>
-                        <Link href="/contact" onClick={() => setActiveDropdown(null)} className="bg-white text-slate-900 font-bold px-6 py-2.5 rounded-lg text-sm w-fit hover:bg-slate-100 transition-transform hover:scale-105 shadow-sm block text-center">
+                        <Link href="/contact" onClick={() => setActiveDropdown(null)} className="bg-white text-slate-900 font-bold px-6 py-2.5 rounded-none-none text-sm w-fit hover:bg-slate-100 transition-transform hover:scale-105 shadow-sm block text-center">
                           Hire Now!
                         </Link>
                       </div>
@@ -327,7 +327,7 @@ export default function Navbar() {
 
             {/* CTA Button */}
             <div className="hidden lg:flex items-center">
-              <div className="bg-black hover:bg-slate-800 text-white cursor-pointer px-6 py-2.5 rounded-lg flex items-center gap-3 transition-transform hover:scale-105 shadow-md">
+              <div className="bg-black hover:bg-slate-800 text-white cursor-pointer px-6 py-2.5 rounded-none-none flex items-center gap-3 transition-transform hover:scale-105 shadow-md">
                 <img 
                   src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg" 
                   alt="Play Store"
@@ -346,7 +346,7 @@ export default function Navbar() {
                   setIsOpen(!isOpen);
                   if (isOpen) setOpenDropdown(null);
                 }}
-                className="text-slate-600 hover:text-slate-900 focus:outline-none p-2 bg-slate-50 rounded-lg border border-slate-100"
+                className="text-slate-600 hover:text-slate-900 focus:outline-none p-2 bg-slate-50 rounded-none-none border border-slate-100"
               >
                 {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -370,7 +370,7 @@ export default function Navbar() {
                       setOpenDropdown(null);
                     }
                   }}
-                  className="block px-4 py-3 rounded-lg text-base font-semibold text-slate-700 hover:text-red-600 hover:bg-red-50 transition-colors flex justify-between items-center"
+                  className="block px-4 py-3 rounded-none-none text-base font-semibold text-slate-700 hover:text-red-600 hover:bg-red-50 transition-colors flex justify-between items-center"
                 >
                   {link.name}
                   {link.hasDropdown && (
@@ -381,10 +381,10 @@ export default function Navbar() {
                 {/* Mobile Submenu for About Us */}
                 {link.name === "About Us" && openDropdown === "About Us" && (
                   <div className="pl-6 space-y-1 mt-1 border-l-2 border-red-100 ml-4 overflow-hidden">
-                    <Link href="/experts" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-600 hover:text-[#024a9d] hover:bg-blue-50 transition-colors">Our Experts</Link>
-                    <Link href="/partner" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-600 hover:text-[#024a9d] hover:bg-blue-50 transition-colors">Join as Partner</Link>
-                    <Link href="/about" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-[#024a9d] hover:bg-blue-50 transition-colors">About Company</Link>
-                    <Link href="/agent" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-600 hover:text-[#024a9d] hover:bg-blue-50 transition-colors">Join As Agent</Link>
+                    <Link href="/experts" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block px-4 py-2.5 rounded-none-none text-sm font-semibold text-slate-600 hover:text-[#024a9d] hover:bg-blue-50 transition-colors">Our Experts</Link>
+                    <Link href="/partner" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block px-4 py-2.5 rounded-none-none text-sm font-semibold text-slate-600 hover:text-[#024a9d] hover:bg-blue-50 transition-colors">Join as Partner</Link>
+                    <Link href="/about" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block px-4 py-2.5 rounded-none-none text-sm font-semibold text-[#024a9d] hover:bg-blue-50 transition-colors">About Company</Link>
+                    <Link href="/agent" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block px-4 py-2.5 rounded-none-none text-sm font-semibold text-slate-600 hover:text-[#024a9d] hover:bg-blue-50 transition-colors">Join As Agent</Link>
                   </div>
                 )}
                 
@@ -394,7 +394,7 @@ export default function Navbar() {
                     {servicesData.map((category, idx) => (
                       <div key={idx}>
                          <div className="flex items-center gap-2 mb-2.5">
-                           <div className="w-1 h-3.5 bg-[#024a9d] rounded-full shrink-0"></div>
+                           <div className="w-1 h-3.5 bg-[#024a9d] rounded-none-none shrink-0"></div>
                            <h4 className="font-extrabold text-[12px] uppercase text-slate-800 tracking-wider">
                              {category.title}
                            </h4>
@@ -410,7 +410,7 @@ export default function Navbar() {
                                  {item.name}
                                </Link>
                                {item.badge && (
-                                 <span className="inline-flex items-center px-1.5 py-0.5 mt-1 rounded bg-[#db2777] text-white text-[8px] font-extrabold uppercase tracking-widest w-max ring-1 ring-inset ring-pink-500/20 shadow-sm">
+                                 <span className="inline-flex items-center px-1.5 py-0.5 mt-1 rounded-none bg-[#db2777] text-white text-[8px] font-extrabold uppercase tracking-widest w-max ring-1 ring-inset ring-pink-500/20 shadow-sm">
                                    {item.badge}
                                  </span>
                                )}
@@ -423,7 +423,7 @@ export default function Navbar() {
                     {/* Mobile Global CTA */}
                     <div className="mt-5 pt-4 border-t border-blue-100 pr-4">
                        <div className="text-center font-bold text-[#024a9d] text-xs mb-3 tracking-wide">Trained ! Trusted ! Verified</div>
-                       <Link href="/contact" onClick={() => setIsOpen(false)} className="block w-full text-center bg-[#1a73e8] hover:bg-blue-600 text-white font-sans text-sm font-medium py-2.5 rounded shadow-sm transition-colors">
+                       <Link href="/contact" onClick={() => setIsOpen(false)} className="block w-full text-center bg-[#1a73e8] hover:bg-blue-600 text-white font-sans text-sm font-medium py-2.5 rounded-none shadow-sm transition-colors">
                          Hire Now
                        </Link>
                      </div>
@@ -443,7 +443,7 @@ export default function Navbar() {
                         <li>
                           <Link href="/packages/standard-package" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="flex items-center gap-2 py-1.5 text-[13px] font-medium text-slate-600 hover:text-blue-600">
                             Standard Package
-                            <span className="bg-[#db2777] text-white px-1.5 py-0.5 rounded text-[8px] font-bold uppercase">Recommended</span>
+                            <span className="bg-[#db2777] text-white px-1.5 py-0.5 rounded-none text-[8px] font-bold uppercase">Recommended</span>
                           </Link>
                         </li>
                         <li><Link href="/packages/premium-package" onClick={() => { setIsOpen(false); setOpenDropdown(null); }} className="block py-1.5 text-[13px] font-medium text-slate-600 hover:text-blue-600">Premium Package</Link></li>
@@ -464,7 +464,7 @@ export default function Navbar() {
               </div>
             ))}
             <div className="mt-4 px-4 pt-4 border-t border-slate-100">
-              <button className="w-full bg-black text-white px-5 py-3 rounded-lg flex items-center justify-center gap-3 shadow-md">
+              <button className="w-full bg-black text-white px-5 py-3 rounded-none-none flex items-center justify-center gap-3 shadow-md">
                 <img 
                   src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg" 
                   alt="Play Store"

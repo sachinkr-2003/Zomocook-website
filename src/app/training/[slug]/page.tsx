@@ -234,7 +234,7 @@ export default function CourseFullPage({ params }: { params: Promise<{ slug: str
              <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto relative">
                 
                 {/* Details Card */}
-                <div className="bg-[#f8f6ff] shadow-xl rounded-xl p-8 sm:p-12 text-center text-slate-500 font-medium space-y-3 text-sm sm:text-base">
+                <div className="bg-[#f8f6ff] shadow-xl rounded-none-none p-8 sm:p-12 text-center text-slate-500 font-medium space-y-3 text-sm sm:text-base">
                     <p>Batch Size : {course.batchSize}</p>
                     <p>Timing : {course.timing}</p>
                     <p>Duration: {course.duration}</p>
@@ -244,7 +244,7 @@ export default function CourseFullPage({ params }: { params: Promise<{ slug: str
                 </div>
 
                 {/* Fees Card */}
-                <div className="bg-[#f8f6ff] shadow-xl rounded-xl p-8 sm:p-12 text-center text-slate-500 font-medium flex flex-col justify-center gap-3 text-sm sm:text-base">
+                <div className="bg-[#f8f6ff] shadow-xl rounded-none-none p-8 sm:p-12 text-center text-slate-500 font-medium flex flex-col justify-center gap-3 text-sm sm:text-base">
                     <p>Course Fees : Rs.{course.price.toLocaleString()}/-</p>
                     <p>Batches start on {course.startDate}</p>
                     <p>100% Practical Training</p>
@@ -252,7 +252,7 @@ export default function CourseFullPage({ params }: { params: Promise<{ slug: str
                     <div className="mt-8">
                         <Link 
                          href={`/training/${slug}/register`}
-                         className="bg-[#ef233c] hover:bg-[#d90429] text-white font-bold py-3 px-8 rounded transition-all shadow-md active:scale-95 inline-block">
+                         className="bg-[#ef233c] hover:bg-[#d90429] text-white font-bold py-3 px-8 rounded-none transition-all shadow-md active:scale-95 inline-block">
                             Register Now
                         </Link>
                     </div>
@@ -276,7 +276,7 @@ export default function CourseFullPage({ params }: { params: Promise<{ slug: str
         <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
             {/* Box 1 */}
             <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
-                <div className="w-14 h-14 shrink-0 rounded-2xl bg-[#ef233c] text-white flex items-center justify-center shadow-lg shadow-red-500/20">
+                <div className="w-14 h-14 shrink-0 rounded-none-none bg-[#ef233c] text-white flex items-center justify-center shadow-lg shadow-red-500/20">
                     <HandPlatter className="w-7 h-7" />
                 </div>
                 <div>
@@ -289,7 +289,7 @@ export default function CourseFullPage({ params }: { params: Promise<{ slug: str
             
             {/* Box 2 */}
             <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
-                <div className="w-14 h-14 shrink-0 rounded-2xl bg-[#ef233c] text-white flex items-center justify-center shadow-lg shadow-red-500/20">
+                <div className="w-14 h-14 shrink-0 rounded-none-none bg-[#ef233c] text-white flex items-center justify-center shadow-lg shadow-red-500/20">
                     <IndianRupee className="w-7 h-7" />
                 </div>
                 <div>
@@ -302,7 +302,7 @@ export default function CourseFullPage({ params }: { params: Promise<{ slug: str
 
             {/* Box 3 */}
             <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
-                <div className="w-14 h-14 shrink-0 rounded-2xl bg-[#ef233c] text-white flex items-center justify-center shadow-lg shadow-red-500/20">
+                <div className="w-14 h-14 shrink-0 rounded-none-none bg-[#ef233c] text-white flex items-center justify-center shadow-lg shadow-red-500/20">
                     <Briefcase className="w-7 h-7" />
                 </div>
                 <div>
@@ -325,7 +325,7 @@ export default function CourseFullPage({ params }: { params: Promise<{ slug: str
           <div className="bg-[#f4f4f4] py-10 sm:py-16 px-4">
               <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
                   <div className="flex items-start gap-4 md:w-1/3">
-                      <div className="w-14 h-14 shrink-0 rounded-2xl bg-[#ef233c] text-white flex items-center justify-center shadow-lg shadow-red-500/20">
+                      <div className="w-14 h-14 shrink-0 rounded-none-none bg-[#ef233c] text-white flex items-center justify-center shadow-lg shadow-red-500/20">
                           <MapPin className="w-7 h-7" />
                       </div>
                       <div className="pt-1">
@@ -335,7 +335,7 @@ export default function CourseFullPage({ params }: { params: Promise<{ slug: str
                           </p>
                       </div>
                   </div>
-                  <div className="md:w-2/3 w-full h-[350px] border border-red-500 rounded-xl overflow-hidden shadow-sm">
+                  <div className="md:w-2/3 w-full h-[350px] border border-red-500 rounded-none-none overflow-hidden shadow-sm">
                       <iframe 
                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14343.837877207604!2d80.950797!3d26.903823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399957d54baf6859%3A0x6bba847c20c09033!2sZomocook%20Training%20Center!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
                           width="100%" 
@@ -498,7 +498,7 @@ export default function CourseFullPage({ params }: { params: Promise<{ slug: str
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
         <Link 
            href={`/training/${slug}/register`}
-           className="bg-[#ef233c] hover:bg-[#d90429] shadow-[0_5px_25px_rgba(239,35,60,0.4)] text-white font-bold py-3.5 px-12 rounded transition-transform active:scale-95 text-[17px] inline-block text-center whitespace-nowrap">
+           className="bg-[#ef233c] hover:bg-[#d90429] shadow-[0_5px_25px_rgba(239,35,60,0.4)] text-white font-bold py-3.5 px-12 rounded-none transition-transform active:scale-95 text-[17px] inline-block text-center whitespace-nowrap">
             Register Now
         </Link>
       </div>

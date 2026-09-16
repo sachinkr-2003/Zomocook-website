@@ -102,13 +102,13 @@ export default function ServiceLeadForm() {
           onChange={handleChange}
           required
           placeholder="E.g. Owner/Manager name" 
-          className="w-full bg-[#f8fafc] border border-slate-200 rounded-none px-4 py-2 md:py-2.5 text-[14px] font-medium text-gray-900 placeholder:text-slate-400 focus:outline-none focus:border-[#f97316] transition-colors" 
+          className="w-full bg-[#f8fafc] border border-slate-200 rounded-none px-4 py-2 md:py-2.5 text-[14px] font-medium text-gray-900 placeholder:text-slate-400 focus:outline-none focus:border-[#024a9d] transition-colors" 
         />
       </div>
       
       <div className="space-y-2">
         <label className="text-[14px] font-bold text-[#475569]">Phone Number <span className="text-red-500">*</span></label>
-        <div className="flex bg-[#f8fafc] border border-slate-200 rounded-none overflow-hidden focus-within:border-[#f97316] transition-colors">
+        <div className="flex bg-[#f8fafc] border border-slate-200 rounded-none overflow-hidden focus-within:border-[#024a9d] transition-colors">
             <div className="flex items-center justify-center bg-transparent pl-4 pr-2 shrink-0 border-r border-slate-200">
               <span className="text-lg">🇮🇳</span> <span className="text-[15px] font-semibold text-slate-700 ml-2">+91</span>
             </div>
@@ -133,7 +133,7 @@ export default function ServiceLeadForm() {
           onChange={handleChange}
           required
           placeholder="E.g. Cafe@gmail.com" 
-          className="w-full bg-[#f8fafc] border border-slate-200 rounded-none px-4 py-2 md:py-2.5 text-[14px] font-medium text-gray-900 placeholder:text-slate-400 focus:outline-none focus:border-[#f97316] transition-colors" 
+          className="w-full bg-[#f8fafc] border border-slate-200 rounded-none px-4 py-2 md:py-2.5 text-[14px] font-medium text-gray-900 placeholder:text-slate-400 focus:outline-none focus:border-[#024a9d] transition-colors" 
         />
       </div>
 
@@ -141,8 +141,11 @@ export default function ServiceLeadForm() {
           <button 
             type="submit" 
             disabled={status === 'loading'}
-            className="w-full flex items-center justify-center gap-2 bg-[#0b57d0] hover:bg-[#0842a0] text-white font-bold py-2.5 rounded-none transition-colors text-[15px] shadow-sm disabled:opacity-70 disabled:cursor-not-allowed"
+            className="w-full flex items-center justify-center gap-2 bg-[#024a9d] hover:bg-[#0f172a] text-white font-bold py-3.5 rounded-none transition-all text-[15px] shadow-sm relative group overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed"
           >
+            {/* Added bottom hover accent line on the button */}
+            <div className="absolute inset-x-0 bottom-0 h-1 bg-[#d62423] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+            
             {status === 'loading' ? (
               <>
                 <svg className="animate-spin -ml-1 mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

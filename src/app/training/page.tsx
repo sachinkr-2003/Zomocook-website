@@ -34,8 +34,8 @@ export default function TrainingPage() {
         </div>
 
         <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10 w-full flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
-            <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,1)]"></span>
+          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-none-none mb-4">
+            <span className="w-1.5 h-1.5 bg-green-400 rounded-none-none animate-pulse shadow-[0_0_8px_rgba(74,222,128,1)]"></span>
             Zomocook Academy
           </div>
           
@@ -51,7 +51,7 @@ export default function TrainingPage() {
           
           <button 
             onClick={() => document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-[#e11d48] text-white hover:bg-[#be123c] font-bold py-2.5 px-6 sm:py-3 sm:px-8 rounded-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2 group text-sm"
+            className="bg-[#e11d48] text-white hover:bg-[#be123c] font-bold py-2.5 px-6 sm:py-3 sm:px-8 rounded-none-none transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2 group text-sm"
           >
             Explore Courses
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -63,22 +63,22 @@ export default function TrainingPage() {
       <section className="py-20 lg:py-32 px-4 sm:px-6 bg-white relative">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
-          <div className="bg-blue-50/50 p-8 sm:p-12 rounded-[40px] border border-blue-100/50">
+          <div className="bg-blue-50/50 p-8 sm:p-12 rounded-none-none border border-blue-100/50">
             <h2 className="text-[#024a9d] text-3xl sm:text-4xl font-black mb-6 tracking-tight">Let's Explain This Simply</h2>
-            <div className="w-12 h-1.5 bg-blue-500 rounded-full mb-8"></div>
+            <div className="w-12 h-1.5 bg-blue-500 rounded-none-none mb-8"></div>
             <p className="text-slate-600 font-medium text-base sm:text-lg leading-relaxed">
               At Zomocook, we believe cooking is not just a skill, but a way to build a career. Our mission is to help people learn cooking and start earning with confidence. We offer practical chef training and hospitality courses for beginners and experienced learners, focusing on real-world skills for jobs and business.
             </p>
           </div>
 
           <div className="text-center lg:text-left lg:pl-10 relative">
-            <div className="absolute top-0 right-10 w-32 h-32 bg-[#38bdf8]/10 rounded-full blur-[40px] -z-10"></div>
+            <div className="absolute top-0 right-10 w-32 h-32 bg-[#38bdf8]/10 rounded-none-none blur-[40px] -z-10"></div>
             <h2 className="text-[#024a9d] text-3xl sm:text-4xl font-black mb-4 tracking-tight">Who Can Join</h2>
             <p className="text-slate-500 font-medium text-lg border-b border-slate-100 pb-6 mb-8 inline-block lg:block lg:w-max">Inclusive programs for everyone.</p>
             
             <div className="flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
               {["Housewives", "Beginners", "Job seekers", "Anyone interested in cooking"].map((tag, i) => (
-                <span key={i} className="bg-white border border-slate-200 shadow-sm text-slate-700 font-bold text-sm px-5 py-2.5 rounded-full hover:border-[#024a9d] hover:text-[#024a9d] transition-colors cursor-default">
+                <span key={i} className="bg-white border border-slate-200 shadow-sm text-slate-700 font-bold text-sm px-5 py-2.5 rounded-none-none hover:border-[#024a9d] hover:text-[#024a9d] transition-colors cursor-default">
                   {tag}
                 </span>
               ))}
@@ -98,15 +98,15 @@ export default function TrainingPage() {
             <p className="text-slate-500 font-medium text-base sm:text-xl">
               Find the perfect course to learn, grow, and succeed.
             </p>
-            <div className="w-16 h-1 mt-6 bg-blue-500 mx-auto rounded-full"></div>
+            <div className="w-16 h-1 mt-6 bg-blue-500 mx-auto rounded-none-none"></div>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             
             {/* Course 1 */}
-            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] border-2 border-transparent hover:border-blue-100 transition-all duration-300 hover:shadow-xl flex flex-col group relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
-               <div className="w-16 h-16 rounded-2xl bg-[#024a9d] text-white flex items-center justify-center mb-6 shadow-lg shadow-blue-900/20">
+            <div className="bg-white rounded-none-none p-6 sm:p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] border-2 border-transparent hover:border-blue-100 transition-all duration-300 hover:shadow-xl flex flex-col group relative overflow-hidden">
+               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-none-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
+               <div className="w-16 h-16 rounded-none-none bg-[#024a9d] text-white flex items-center justify-center mb-6 shadow-lg shadow-blue-900/20">
                  <ChefHat className="w-8 h-8" />
                </div>
                <h3 className="text-xl font-black text-[#024a9d] mb-4 group-hover:text-blue-600 transition-colors">Chef Training</h3>
@@ -115,21 +115,21 @@ export default function TrainingPage() {
                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500 shrink-0" /> Home cook Training</li>
                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500 shrink-0" /> Placement support</li>
                </ul>
-               <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-6">
+               <div className="bg-slate-50 p-4 rounded-none-none border border-slate-100 mb-6">
                  <p className="text-[13px] text-slate-500 font-bold mb-1">Duration: <span className="text-green-600">30 Days Program</span></p>
                  <p className="text-[13px] text-slate-500 font-bold">Course Fees: <span className="text-green-600">Rs.14,999/-</span></p>
                </div>
                <Link href="/training/chef-training">
-                 <button className="w-full bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wider relative overflow-hidden group/btn">
+                 <button className="w-full bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-none-none transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wider relative overflow-hidden group/btn">
                    <span className="relative z-10 flex items-center gap-2">View Course <ArrowRight className="w-4 h-4" /></span>
                  </button>
                </Link>
             </div>
 
             {/* Course 2 */}
-            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] border-2 border-transparent hover:border-blue-100 transition-all duration-300 hover:shadow-xl flex flex-col group relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
-               <div className="w-16 h-16 rounded-2xl bg-[#024a9d] text-white flex items-center justify-center mb-6 shadow-lg shadow-blue-900/20">
+            <div className="bg-white rounded-none-none p-6 sm:p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] border-2 border-transparent hover:border-blue-100 transition-all duration-300 hover:shadow-xl flex flex-col group relative overflow-hidden">
+               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-none-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
+               <div className="w-16 h-16 rounded-none-none bg-[#024a9d] text-white flex items-center justify-center mb-6 shadow-lg shadow-blue-900/20">
                  <GraduationCap className="w-8 h-8" />
                </div>
                <h3 className="text-xl font-black text-[#024a9d] mb-4 group-hover:text-blue-600 transition-colors">Special Courses</h3>
@@ -137,21 +137,21 @@ export default function TrainingPage() {
                <p className="text-slate-500 text-sm font-semibold leading-relaxed mb-8 flex-1">
                  Momos | Biryani | Fast Food | Chaap | Pizza | Chaat Master
                </p>
-               <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-6">
+               <div className="bg-slate-50 p-4 rounded-none-none border border-slate-100 mb-6">
                  <p className="text-[13px] text-slate-500 font-bold mb-1">Duration: <span className="text-green-600">10 Days Program</span></p>
                  <p className="text-[13px] text-slate-500 font-bold">Course Fees: <span className="text-green-600">Rs.9,999/-</span></p>
                </div>
                <Link href="/training/special-courses">
-               <button className="w-full bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
+               <button className="w-full bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-none-none transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
                  View Course <ArrowRight className="w-4 h-4" />
                </button>
                </Link>
             </div>
 
             {/* Course 3 */}
-            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] border-2 border-transparent hover:border-blue-100 transition-all duration-300 hover:shadow-xl flex flex-col group relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
-               <div className="w-16 h-16 rounded-2xl bg-[#024a9d] text-white flex items-center justify-center mb-6 shadow-lg shadow-blue-900/20">
+            <div className="bg-white rounded-none-none p-6 sm:p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] border-2 border-transparent hover:border-blue-100 transition-all duration-300 hover:shadow-xl flex flex-col group relative overflow-hidden">
+               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-none-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
+               <div className="w-16 h-16 rounded-none-none bg-[#024a9d] text-white flex items-center justify-center mb-6 shadow-lg shadow-blue-900/20">
                  <UtensilsCrossed className="w-8 h-8" />
                </div>
                <h3 className="text-xl font-black text-[#024a9d] mb-4 group-hover:text-blue-600 transition-colors">Cuisine Courses</h3>
@@ -159,21 +159,21 @@ export default function TrainingPage() {
                <p className="text-slate-500 text-sm font-semibold leading-relaxed mb-8 flex-1">
                  Chinese, Continental, South & North Indian cooking
                </p>
-               <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-6">
+               <div className="bg-slate-50 p-4 rounded-none-none border border-slate-100 mb-6">
                  <p className="text-[13px] text-slate-500 font-bold mb-1">Duration: <span className="text-green-600">30 Days Program</span></p>
                  <p className="text-[13px] text-slate-500 font-bold">Course Fees: <span className="text-green-600">Rs.14,999/-</span></p>
                </div>
                <Link href="/training/cuisine-courses">
-               <button className="w-full bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
+               <button className="w-full bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-none-none transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
                  View Course <ArrowRight className="w-4 h-4" />
                </button>
                </Link>
             </div>
 
             {/* Course 4 */}
-            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] border-2 border-transparent hover:border-blue-100 transition-all duration-300 hover:shadow-xl flex flex-col group relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
-               <div className="w-16 h-16 rounded-2xl bg-[#024a9d] text-white flex items-center justify-center mb-6 shadow-lg shadow-blue-900/20">
+            <div className="bg-white rounded-none-none p-6 sm:p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] border-2 border-transparent hover:border-blue-100 transition-all duration-300 hover:shadow-xl flex flex-col group relative overflow-hidden">
+               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-none-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
+               <div className="w-16 h-16 rounded-none-none bg-[#024a9d] text-white flex items-center justify-center mb-6 shadow-lg shadow-blue-900/20">
                  <Users className="w-8 h-8" />
                </div>
                <h3 className="text-xl font-black text-[#024a9d] mb-4 group-hover:text-blue-600 transition-colors">Staff Training</h3>
@@ -181,12 +181,12 @@ export default function TrainingPage() {
                <p className="text-slate-500 text-sm font-semibold leading-relaxed mb-8 flex-1">
                  Captain, Waiter & kitchen assistant roles
                </p>
-               <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-6">
+               <div className="bg-slate-50 p-4 rounded-none-none border border-slate-100 mb-6">
                  <p className="text-[13px] text-slate-500 font-bold mb-1">Duration: <span className="text-green-600">5 Days Program</span></p>
                  <p className="text-[13px] text-slate-500 font-bold">Course Fees: <span className="text-green-600">Rs.3,999/-</span></p>
                </div>
                <Link href="/training/staff-training">
-               <button className="w-full bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
+               <button className="w-full bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-none-none transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
                  View Course <ArrowRight className="w-4 h-4" />
                </button>
                </Link>
@@ -211,7 +211,7 @@ export default function TrainingPage() {
           <div className="grid md:grid-cols-3 gap-6 sm:gap-8 mb-16">
             
             <div className="flex flex-col items-center text-center group">
-              <div className="w-16 h-16 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center mb-4 group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-none-none bg-red-50 text-red-500 flex items-center justify-center mb-4 group-hover:-translate-y-1 transition-transform duration-300">
                 <HandPlatter className="w-8 h-8" />
               </div>
               <h3 className="text-lg font-bold text-[#024a9d] mb-2">Hands On Training</h3>
@@ -221,7 +221,7 @@ export default function TrainingPage() {
             </div>
 
             <div className="flex flex-col items-center text-center group">
-              <div className="w-16 h-16 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center mb-4 group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-none-none bg-red-50 text-red-500 flex items-center justify-center mb-4 group-hover:-translate-y-1 transition-transform duration-300">
                 <IndianRupee className="w-8 h-8" />
               </div>
               <h3 className="text-lg font-bold text-[#024a9d] mb-2">Affordable Fees</h3>
@@ -231,7 +231,7 @@ export default function TrainingPage() {
             </div>
 
             <div className="flex flex-col items-center text-center group">
-              <div className="w-16 h-16 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center mb-4 group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-none-none bg-red-50 text-red-500 flex items-center justify-center mb-4 group-hover:-translate-y-1 transition-transform duration-300">
                 <Briefcase className="w-8 h-8" />
               </div>
               <h3 className="text-lg font-bold text-[#024a9d] mb-2">Job Placement</h3>
@@ -250,11 +250,11 @@ export default function TrainingPage() {
           </div>
           
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
-            <div className="bg-white border-2 border-red-100 rounded-3xl p-8 sm:p-10 text-center shadow-lg shadow-red-50 hover:border-red-200 transition-colors">
+            <div className="bg-white border-2 border-red-100 rounded-none-none p-8 sm:p-10 text-center shadow-lg shadow-red-50 hover:border-red-200 transition-colors">
               <p className="text-slate-700 font-bold text-lg mb-3">15+ Days Training</p>
               <p className="text-slate-500 font-medium text-base">Live Cooking Practice</p>
             </div>
-            <div className="bg-white border-2 border-red-100 rounded-3xl p-8 sm:p-10 text-center shadow-lg shadow-red-50 hover:border-red-200 transition-colors">
+            <div className="bg-white border-2 border-red-100 rounded-none-none p-8 sm:p-10 text-center shadow-lg shadow-red-50 hover:border-red-200 transition-colors">
               <p className="text-slate-700 font-bold text-lg mb-3">Training Certificate</p>
               <p className="text-slate-500 font-medium text-base">Real Kitchen Experience</p>
             </div>
@@ -271,8 +271,8 @@ export default function TrainingPage() {
               Training Center
             </h2>
             
-            <div className="flex flex-col items-center justify-center p-8 bg-white rounded-3xl shadow-lg border border-slate-100 max-w-2xl mx-auto mb-12 transform hover:-translate-y-1 transition-transform">
-              <div className="w-16 h-16 rounded-2xl bg-red-100 text-[#e11d48] flex items-center justify-center mb-4">
+            <div className="flex flex-col items-center justify-center p-8 bg-white rounded-none-none shadow-lg border border-slate-100 max-w-2xl mx-auto mb-12 transform hover:-translate-y-1 transition-transform">
+              <div className="w-16 h-16 rounded-none-none bg-red-100 text-[#e11d48] flex items-center justify-center mb-4">
                 <MapPin className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold text-[#024a9d] mb-2">Address</h3>
@@ -283,7 +283,7 @@ export default function TrainingPage() {
             </div>
             
             {/* Google Maps iFrame */}
-            <div className="w-full h-[400px] sm:h-[500px] rounded-3xl overflow-hidden border-4 border-red-500 shadow-2xl relative">
+            <div className="w-full h-[400px] sm:h-[500px] rounded-none-none overflow-hidden border-4 border-red-500 shadow-2xl relative">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14234.678077579893!2d80.93883901614217!3d26.903803875317765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399957cdce3238eb%3A0xe758d4a51e60086!2sJankipuram%2C%20Lucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1703665518921!5m2!1sen!2sin" 
                 width="100%" 
@@ -365,7 +365,7 @@ export default function TrainingPage() {
                 a: "Yes, we are available pan-India with various cook services, Our recent development in Andaman & Nicobar Islands for chef requirement services."
               }
             ].map((faq, index) => (
-              <div key={index} className="bg-slate-50/50 rounded-2xl border border-slate-100 overflow-hidden hover:shadow-md transition-shadow group">
+              <div key={index} className="bg-slate-50/50 rounded-none-none border border-slate-100 overflow-hidden hover:shadow-md transition-shadow group">
                 <div className="bg-slate-100/80 px-4 sm:px-6 py-3.5 flex items-start gap-4">
                   <h3 className="text-[#0e1726] font-bold text-[15px] sm:text-base flex-1 leading-snug">{faq.q}</h3>
                 </div>
