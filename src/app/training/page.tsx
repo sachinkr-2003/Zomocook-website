@@ -119,10 +119,8 @@ export default function TrainingPage() {
                  <p className="text-[13px] text-slate-500 font-bold mb-1">Duration: <span className="text-green-600">30 Days Program</span></p>
                  <p className="text-[13px] text-slate-500 font-bold">Course Fees: <span className="text-green-600">Rs.14,999/-</span></p>
                </div>
-               <Link href="/training/chef-training">
-                 <button className="w-full bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-none-none transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wider relative overflow-hidden group/btn">
-                   <span className="relative z-10 flex items-center gap-2">View Course <ArrowRight className="w-4 h-4" /></span>
-                 </button>
+               <Link href="/training/chef-training" className="w-full block text-center bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-none-none transition-colors text-sm uppercase tracking-wider relative overflow-hidden group/btn">
+                 <span className="relative z-10 flex items-center justify-center gap-2">View Course <ArrowRight className="w-4 h-4" /></span>
                </Link>
             </div>
 
@@ -141,10 +139,8 @@ export default function TrainingPage() {
                  <p className="text-[13px] text-slate-500 font-bold mb-1">Duration: <span className="text-green-600">10 Days Program</span></p>
                  <p className="text-[13px] text-slate-500 font-bold">Course Fees: <span className="text-green-600">Rs.9,999/-</span></p>
                </div>
-               <Link href="/training/special-courses">
-               <button className="w-full bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-none-none transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
-                 View Course <ArrowRight className="w-4 h-4" />
-               </button>
+               <Link href="/training/special-courses" className="w-full block text-center bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-none-none transition-colors text-sm uppercase tracking-wider">
+                 <span className="flex items-center justify-center gap-2">View Course <ArrowRight className="w-4 h-4" /></span>
                </Link>
             </div>
 
@@ -163,10 +159,8 @@ export default function TrainingPage() {
                  <p className="text-[13px] text-slate-500 font-bold mb-1">Duration: <span className="text-green-600">30 Days Program</span></p>
                  <p className="text-[13px] text-slate-500 font-bold">Course Fees: <span className="text-green-600">Rs.14,999/-</span></p>
                </div>
-               <Link href="/training/cuisine-courses">
-               <button className="w-full bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-none-none transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
-                 View Course <ArrowRight className="w-4 h-4" />
-               </button>
+               <Link href="/training/cuisine-courses" className="w-full block text-center bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-none-none transition-colors text-sm uppercase tracking-wider">
+                 <span className="flex items-center justify-center gap-2">View Course <ArrowRight className="w-4 h-4" /></span>
                </Link>
             </div>
 
@@ -185,10 +179,8 @@ export default function TrainingPage() {
                  <p className="text-[13px] text-slate-500 font-bold mb-1">Duration: <span className="text-green-600">5 Days Program</span></p>
                  <p className="text-[13px] text-slate-500 font-bold">Course Fees: <span className="text-green-600">Rs.3,999/-</span></p>
                </div>
-               <Link href="/training/staff-training">
-               <button className="w-full bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-none-none transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
-                 View Course <ArrowRight className="w-4 h-4" />
-               </button>
+               <Link href="/training/staff-training" className="w-full block text-center bg-[#e11d48] hover:bg-[#be123c] text-white font-bold py-3.5 rounded-none-none transition-colors text-sm uppercase tracking-wider">
+                 <span className="flex items-center justify-center gap-2">View Course <ArrowRight className="w-4 h-4" /></span>
                </Link>
             </div>
           </div>
