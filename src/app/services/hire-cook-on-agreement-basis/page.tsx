@@ -8,7 +8,7 @@ export default function HireNorthIndianChefPage() {
     <main className="min-h-screen bg-white font-sans text-center selection:bg-blue-600 selection:text-white">
       
       {/* ================= HERO SECTION ================= */}
-      <section className="pt-32 sm:pt-40 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="pt-32 sm:pt-[140px] md:pt-[160px] pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="bg-[#eff6ff] text-[#1d4ed8] text-[11px] sm:text-[12px] font-black uppercase tracking-widest px-5 py-2.5 rounded-full mb-8 shadow-sm inline-flex items-center">
           TRUSTED HOSPITALITY STAFFING PARTNER
         </div>

@@ -84,7 +84,7 @@ export default function ServiceLeadForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
       {status === 'error' && (
         <div className="bg-red-50 text-red-600 text-sm font-bold p-4 rounded-lg flex items-center gap-2 border border-red-200 animate-pulse hidden">
           {/* Hidden since Swal handles it, kept for fallback structure */}
@@ -102,13 +102,13 @@ export default function ServiceLeadForm() {
           onChange={handleChange}
           required
           placeholder="E.g. Owner/Manager name" 
-          className="w-full bg-[#f8fafc] border border-slate-200 rounded-lg px-4 py-3 text-[15px] font-medium text-gray-900 placeholder:text-slate-400 focus:outline-none focus:border-[#f97316] transition-colors" 
+          className="w-full bg-[#f8fafc] border border-slate-200 rounded-none px-4 py-2 md:py-2.5 text-[14px] font-medium text-gray-900 placeholder:text-slate-400 focus:outline-none focus:border-[#f97316] transition-colors" 
         />
       </div>
       
       <div className="space-y-2">
         <label className="text-[14px] font-bold text-[#475569]">Phone Number <span className="text-red-500">*</span></label>
-        <div className="flex bg-[#f8fafc] border border-slate-200 rounded-lg overflow-hidden focus-within:border-[#f97316] transition-colors">
+        <div className="flex bg-[#f8fafc] border border-slate-200 rounded-none overflow-hidden focus-within:border-[#f97316] transition-colors">
             <div className="flex items-center justify-center bg-transparent pl-4 pr-2 shrink-0 border-r border-slate-200">
               <span className="text-lg">🇮🇳</span> <span className="text-[15px] font-semibold text-slate-700 ml-2">+91</span>
             </div>
@@ -119,7 +119,7 @@ export default function ServiceLeadForm() {
               onChange={handleChange}
               required
               placeholder="Enter 10 Digit Mobile No." 
-              className="w-full bg-transparent px-4 py-3 text-[15px] font-medium text-gray-900 placeholder:text-slate-400 focus:outline-none" 
+              className="w-full bg-transparent px-4 py-2 md:py-2.5 text-[14px] font-medium text-gray-900 placeholder:text-slate-400 focus:outline-none" 
             />
         </div>
       </div>
@@ -133,15 +133,15 @@ export default function ServiceLeadForm() {
           onChange={handleChange}
           required
           placeholder="E.g. Cafe@gmail.com" 
-          className="w-full bg-[#f8fafc] border border-slate-200 rounded-lg px-4 py-3 text-[15px] font-medium text-gray-900 placeholder:text-slate-400 focus:outline-none focus:border-[#f97316] transition-colors" 
+          className="w-full bg-[#f8fafc] border border-slate-200 rounded-none px-4 py-2 md:py-2.5 text-[14px] font-medium text-gray-900 placeholder:text-slate-400 focus:outline-none focus:border-[#f97316] transition-colors" 
         />
       </div>
 
-      <div className="pt-4">
+      <div className="pt-2">
           <button 
             type="submit" 
             disabled={status === 'loading'}
-            className="w-full flex items-center justify-center gap-2 bg-[#0b57d0] hover:bg-[#0842a0] text-white font-bold py-3.5 rounded-lg transition-colors text-[15px] shadow-sm disabled:opacity-70 disabled:cursor-not-allowed"
+            className="w-full flex items-center justify-center gap-2 bg-[#0b57d0] hover:bg-[#0842a0] text-white font-bold py-2.5 rounded-none transition-colors text-[15px] shadow-sm disabled:opacity-70 disabled:cursor-not-allowed"
           >
             {status === 'loading' ? (
               <>

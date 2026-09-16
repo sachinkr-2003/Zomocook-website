@@ -8,7 +8,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-[#fafbfc] font-sans selection:bg-[#024a9d] selection:text-white">
       
       {/* ================= HERO SECTION (Premium Split Layout) ================= */}
-      <section className="bg-white pt-32 pb-12 sm:pt-44 sm:pb-16 relative overflow-hidden">
+      <section className="bg-white pt-32 pb-12 sm:pt-[140px] md:pt-[160px] sm:pb-16 relative overflow-hidden">
         {/* Soft background line to separate from next section */}
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
         

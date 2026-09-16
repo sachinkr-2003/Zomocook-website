@@ -5,6 +5,13 @@ import Lead from '@/models/Lead';
 // PUT: Update a lead's status
 export async function PUT(request: Request, { params }: { params: { id: string } }) {
   try {
+    // SECURITY CHECK: Verify Admin Token
+    const authHeader = request.headers.get('authorization');
+    const token = authHeader?.split(' ')[1];
+    if (token !== (process.env.ADMIN_PASSWORD || 'zomo123')) {
+      return NextResponse.json({ success: false, message: 'Unauthorized access' }, { status: 401 });
+    }
+
     const { id } = params;
     const body = await request.json();
     const { status } = body;
@@ -35,6 +42,13 @@ export async function PUT(request: Request, { params }: { params: { id: string }
 // DELETE: Remove a lead from the database completely
 export async function DELETE(request: Request, { params }: { params: { id: string } }) {
   try {
+    // SECURITY CHECK: Verify Admin Token
+    const authHeader = request.headers.get('authorization');
+    const token = authHeader?.split(' ')[1];
+    if (token !== (process.env.ADMIN_PASSWORD || 'zomo123')) {
+      return NextResponse.json({ success: false, message: 'Unauthorized access' }, { status: 401 });
+    }
+
     const { id } = params;
     await connectToDatabase();
     

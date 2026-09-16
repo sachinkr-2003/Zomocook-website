@@ -10,7 +10,7 @@ export default function BookATrialPage() {
     <div className="min-h-screen bg-slate-50 font-sans overflow-x-hidden selection:bg-blue-200">
       
       {/* 1. HERO SECTION */}
-      <section className="relative bg-[#024a9d] pt-24 pb-0 lg:pt-32 lg:pb-0 overflow-hidden flex items-end">
+      <section className="relative bg-[#024a9d] pt-24 pb-0 lg:pt-[140px] md:pt-[160px] lg:pb-0 overflow-hidden flex items-end">
         {/* Decorative Desktop Background Elements */}
         <div className="absolute top-0 right-0 w-[50vw] h-[100%] bg-blue-500/10 blur-[100px] pointer-events-none hidden lg:block"></div>
         <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-cyan-400/10 blur-[120px] pointer-events-none hidden lg:block"></div>

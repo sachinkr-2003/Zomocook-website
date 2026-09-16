@@ -6,7 +6,7 @@ export default function StandardPackagePage() {
     <main className="min-h-screen bg-[#FAFAFA] font-sans selection:bg-blue-200">
       
       {/* --- HERO SECTION --- */}
-      <section className="relative pt-32 pb-12 lg:pt-40 lg:pb-16 overflow-hidden bg-slate-950 text-white">
+      <section className="relative pt-32 pb-12 lg:pt-[140px] md:pt-[160px] lg:pb-16 overflow-hidden bg-slate-950 text-white">
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/30 rounded-full blur-[120px] mix-blend-screen pointer-events-none" />
         <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none" />
         

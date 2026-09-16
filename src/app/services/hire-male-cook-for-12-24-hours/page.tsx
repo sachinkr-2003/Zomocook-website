@@ -54,7 +54,7 @@ export default function DomesticCookPage() {
     <main className="min-h-screen bg-[#fffdfb] font-sans selection:bg-[#fb923c] selection:text-white">
       
       {/* ================= HERO SECTION ================= */}
-      <section className="pt-36 sm:pt-48 pb-20 px-4 sm:px-6 lg:px-8 text-center max-w-7xl mx-auto">
+      <section className="pt-36 sm:pt-[140px] md:pt-[160px] pb-20 px-4 sm:px-6 lg:px-8 text-center max-w-7xl mx-auto">
         <div className="bg-[#fef3c7] text-[#92400e] text-[11px] sm:text-xs font-black uppercase tracking-wider px-6 py-2.5 rounded-full mb-8 shadow-sm inline-flex items-center gap-2 border border-yellow-200">
           <span>🏠</span> Trusted Home Cook Hiring Service Across India
         </div>

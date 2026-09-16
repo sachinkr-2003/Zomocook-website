@@ -20,7 +20,7 @@ export default function PrivateChefPage() {
     <main className="min-h-screen bg-[#fffcf9] font-sans selection:bg-[#fb923c] selection:text-white">
       
       {/* ================= HERO SECTION ================= */}
-      <section className="pt-36 sm:pt-48 pb-24 px-4 sm:px-6 lg:px-8 text-center max-w-6xl mx-auto">
+      <section className="pt-36 sm:pt-[140px] md:pt-[160px] pb-24 px-4 sm:px-6 lg:px-8 text-center max-w-6xl mx-auto">
         <div className="bg-[#fff7ed] text-[#ea580c] text-[12px] font-black uppercase tracking-widest px-6 py-2.5 rounded-full mb-8 shadow-sm inline-flex items-center gap-2 border border-orange-100">
           Chef On Demand Service
         </div>

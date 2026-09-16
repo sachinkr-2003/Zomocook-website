@@ -12,14 +12,14 @@ export default function Footer() {
   ];
 
   const occasionLinks = [
-    { name: "Chef for Birthday Party", href: "/services/book-chef-on-birthday-party" },
-    { name: "Chef for House Party", href: "/services/hire-professional-chef-for-home" },
-    { name: "Chef for Wedding Functions", href: "/services/hire-cook-for-catering-events-service" },
-    { name: "Chef for Corporate Event", href: "/services/book-chef-on-cultural-events" },
-    { name: "Chef for Anniversary Party", href: "/services/book-chef-on-marriage-anniversary" },
-    { name: "Chef for Kids Party", href: "/services/book-chef-on-birthday-party" },
-    { name: "Chef for Kitty Party", href: "/services/book-chef-on-kitty-party" },
-    { name: "Chef for Bachelor Party", href: "/services/book-waiter-on-occasion" }
+    { name: "Chef for Birthday Party", href: "/services/chef-for-birthday-party" },
+    { name: "Chef for House Party", href: "/services/chef-for-house-party" },
+    { name: "Chef for Wedding Functions", href: "/services/chef-for-wedding-functions" },
+    { name: "Chef for Corporate Event", href: "/services/chef-for-corporate-event" },
+    { name: "Chef for Anniversary Party", href: "/services/chef-for-anniversary-party" },
+    { name: "Chef for Kids Party", href: "/services/chef-for-kids-party" },
+    { name: "Chef for Kitty Party", href: "/services/chef-for-kitty-party" },
+    { name: "Chef for Bachelor Party", href: "/services/chef-for-bachelor-party" }
   ];
 
   const aboutLinks = [
@@ -74,7 +74,7 @@ export default function Footer() {
               {presenceLinks.map((cityString, i) => {
                 const cityTarget = cityString.replace('Cook in ', '').toLowerCase();
                 return (
-                  <Link key={i} href={`/contact?city=${cityTarget}`} className="text-[13px] font-medium text-slate-400 bg-slate-800/40 border border-slate-700/50 hover:bg-[#1877f2] hover:text-white hover:border-[#1877f2] transition-colors rounded-full px-4 py-1.5">
+                  <Link key={i} href={`/cook-in-${cityTarget.replace(/\s+/g, '-')}`} className="text-[13px] font-medium text-slate-400 bg-slate-800/40 border border-slate-700/50 hover:bg-[#1877f2] hover:text-white hover:border-[#1877f2] transition-colors rounded-full px-4 py-1.5">
                     {cityString}
                   </Link>
                 );

@@ -55,7 +55,12 @@ export default function AdminDashboard() {
   const fetchLeads = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/admin/leads');
+      const savedPin = localStorage.getItem('ZOMO_ADMIN_PASS') || 'zomo123';
+      const res = await fetch('/api/admin/leads', {
+        headers: {
+          'Authorization': `Bearer ${savedPin}`
+        }
+      });
       const json = await res.json();
       if (json.success) {
         setLeads(json.data || []);
@@ -69,9 +74,13 @@ export default function AdminDashboard() {
   const updateStatus = async (id: string, newStatus: string) => {
     setLeads(prev => prev.map(lead => lead._id === id ? { ...lead, status: newStatus } : lead));
     try {
+      const savedPin = localStorage.getItem('ZOMO_ADMIN_PASS') || 'zomo123';
       await fetch(`/api/admin/leads/${id}`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${savedPin}`
+        },
         body: JSON.stringify({ status: newStatus })
       });
     } catch (error) {
@@ -95,7 +104,13 @@ export default function AdminDashboard() {
     
     setLeads(prev => prev.filter(lead => lead._id !== id));
     try {
-      await fetch(`/api/admin/leads/${id}`, { method: 'DELETE' });
+      const savedPin = localStorage.getItem('ZOMO_ADMIN_PASS') || 'zomo123';
+      await fetch(`/api/admin/leads/${id}`, { 
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${savedPin}`
+        }
+      });
       Swal.fire('Deleted!', 'Record has been permanently deleted.', 'success');
     } catch (error) {
       console.error("Failed to delete lead", error);
